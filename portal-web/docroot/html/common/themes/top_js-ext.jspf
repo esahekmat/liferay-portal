@@ -13,3 +13,21 @@
  * details.
  */
 --%>
+
+<%@page import="java.util.Locale"%>
+
+<%
+	if (themeDisplay.getLocale().getLanguage()
+			.equals(new Locale("fa").getLanguage())) {
+%>
+<link
+	href='<%=themeDisplay.getPathThemeCss()+ "/behpardaz/jsCalendar/styles/jquery-ui-1.8.14.css"%>'>
+<script src='<%=themeDisplay.getPathJavaScript() + "/behpardaz/jsCalendar/scripts/jquery-1.6.2.min.js" %>' type="text/javascript"></script>
+<script src='<%=themeDisplay.getPathJavaScript() + "/behpardaz/jsCalendar/scripts/jquery.ui.core.js" %>' type="text/javascript"></script>
+<script src='<%=themeDisplay.getPathJavaScript() + "/behpardaz/jsCalendar/scripts/jquery.ui.datepicker-cc.js" %>' type="text/javascript"></script>
+<script src='<%=themeDisplay.getPathJavaScript() + "/behpardaz/jsCalendar/scripts/calendar.js" %>' type="text/javascript"></script>
+<script src='<%=themeDisplay.getPathJavaScript() + "/behpardaz/jsCalendar/scripts/jquery.ui.datepicker-cc-fa.js" %>' type="text/javascript"></script>
+
+<%
+	}
+%>
