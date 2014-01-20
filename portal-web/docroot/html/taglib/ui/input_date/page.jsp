@@ -63,7 +63,22 @@ else {
 
 Format format = FastDateFormatFactoryUtil.getSimpleDateFormat(simpleDateFormatPattern, locale);
 %>
-
+<%if(themeDisplay.getLocale().getLanguage()
+		.equals(new Locale("fa").getLanguage())) {%>
+		<input type="text" id="<%= randomNamespace %>displayDate">
+	
+	<input <%= disabled ? "disabled=\"disabled\"" : "" %> id="<%= dayParamId %>" name="<%= dayParam %>" type="hidden" value="<%= dayValue %>" />
+	<input <%= disabled ? "disabled=\"disabled\"" : "" %> id="<%= monthParamId %>" name="<%= monthParam %>" type="hidden" value="<%= monthValue %>" />
+	<input <%= disabled ? "disabled=\"disabled\"" : "" %> id="<%= yearParamId %>" name="<%= yearParam %>" type="hidden" value="<%= yearValue %>" />
+	
+	<script type="text/javascript">
+	  $('#<%= randomNamespace %>displayDate').datepicker({
+          changeMonth: true,
+          changeYear: true
+      });
+	</script>
+	
+<%} else{ %>
 <span class="lfr-input-date <%= cssClass %>" id="<%= randomNamespace %>displayDate">
 	<c:choose>
 		<c:when test="<%= BrowserSnifferUtil.isMobile(request) %>">
@@ -136,6 +151,8 @@ Format format = FastDateFormatFactoryUtil.getSimpleDateFormat(simpleDateFormatPa
 	Liferay.component('<%= namespace + name %>DatePicker');
 </aui:script>
 
+	
+<%} %>
 <%!
 private static final String _SIMPLE_DATE_FORMAT_PATTERN_DMY = "dd/MM/yyyy";
 
