@@ -44,7 +44,7 @@ public class PersianDateFormat extends Format {
 				.gregorianToJalali(new JalaliCalendar.YearMonthDate(cal
 						.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal
 						.get(Calendar.DATE)));
-		return jalali.getYear() + StringPool.SLASH + jalali.getMonth()
+		return jalali.getYear() + StringPool.SLASH + (jalali.getMonth() + 1)
 				+ StringPool.SLASH + jalali.getDate();
 	}
 
@@ -53,7 +53,7 @@ public class PersianDateFormat extends Format {
 				.gregorianToJalali(new JalaliCalendar.YearMonthDate(calendar
 						.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
 						calendar.get(Calendar.DATE)));
-		return jalali.getYear() + StringPool.SLASH + jalali.getMonth()
+		return jalali.getYear() + StringPool.SLASH + (jalali.getMonth() + 1)
 				+ StringPool.SLASH + jalali.getDate();
 	}
 
