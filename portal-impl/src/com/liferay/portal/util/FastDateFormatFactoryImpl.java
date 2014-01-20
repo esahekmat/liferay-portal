@@ -22,11 +22,12 @@ import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 
 import java.text.Format;
-
 import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentHashMap;
+
+import net.behpardaz.util.date.PersianDateFormat;
 
 import org.apache.commons.lang.time.FastDateFormat;
 
@@ -67,21 +68,24 @@ public class FastDateFormatFactoryImpl implements FastDateFormatFactory {
 	}
 
 	@Override
-	public Format getDateTime(
-		int dateStyle, int timeStyle, Locale locale, TimeZone timeZone) {
+	public Format getDateTime(int dateStyle, int timeStyle, Locale locale,
+			TimeZone timeZone) {
+		if (locale.getLanguage().equals(new Locale("fa").getLanguage())) {
+			return PersianDateFormat.getDateTimeInstance(dateStyle, timeStyle,
+					timeZone, locale);
+		} else {
+			String key = getKey(dateStyle, timeStyle, locale, timeZone);
 
-		String key = getKey(dateStyle, timeStyle, locale, timeZone);
+			Format format = _dateTimeFormats.get(key);
 
-		Format format = _dateTimeFormats.get(key);
+			if (format == null) {
+				format = FastDateFormat.getDateTimeInstance(dateStyle,
+						timeStyle, timeZone, locale);
+				_dateTimeFormats.put(key, format);
+			}
 
-		if (format == null) {
-			format = FastDateFormat.getDateTimeInstance(
-				dateStyle, timeStyle, timeZone, locale);
-
-			_dateTimeFormats.put(key, format);
+			return format;
 		}
-
-		return format;
 	}
 
 	@Override
@@ -91,9 +95,8 @@ public class FastDateFormatFactoryImpl implements FastDateFormatFactory {
 
 	@Override
 	public Format getDateTime(Locale locale, TimeZone timeZone) {
-		return getDateTime(
-			FastDateFormatConstants.SHORT, FastDateFormatConstants.SHORT,
-			locale, timeZone);
+		return getDateTime(FastDateFormatConstants.SHORT,
+				FastDateFormatConstants.SHORT, locale, timeZone);
 	}
 
 	@Override
@@ -112,8 +115,8 @@ public class FastDateFormatFactoryImpl implements FastDateFormatFactory {
 	}
 
 	@Override
-	public Format getSimpleDateFormat(
-		String pattern, Locale locale, TimeZone timeZone) {
+	public Format getSimpleDateFormat(String pattern, Locale locale,
+			TimeZone timeZone) {
 
 		String key = getKey(pattern, locale, timeZone);
 
@@ -177,13 +180,9 @@ public class FastDateFormatFactoryImpl implements FastDateFormatFactory {
 		return sb.toString();
 	}
 
-	private Map<String, Format> _dateFormats =
-		new ConcurrentHashMap<String, Format>();
-	private Map<String, Format> _dateTimeFormats =
-		new ConcurrentHashMap<String, Format>();
-	private Map<String, Format> _simpleDateFormats =
-		new ConcurrentHashMap<String, Format>();
-	private Map<String, Format> _timeFormats =
-		new ConcurrentHashMap<String, Format>();
+	private Map<String, Format> _dateFormats = new ConcurrentHashMap<String, Format>();
+	private Map<String, Format> _dateTimeFormats = new ConcurrentHashMap<String, Format>();
+	private Map<String, Format> _simpleDateFormats = new ConcurrentHashMap<String, Format>();
+	private Map<String, Format> _timeFormats = new ConcurrentHashMap<String, Format>();
 
 }
