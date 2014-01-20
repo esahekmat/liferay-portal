@@ -72,10 +72,22 @@ Format format = FastDateFormatFactoryUtil.getSimpleDateFormat(simpleDateFormatPa
 	<input <%= disabled ? "disabled=\"disabled\"" : "" %> id="<%= yearParamId %>" name="<%= yearParam %>" type="hidden" value="<%= yearValue %>" />
 	
 	<script type="text/javascript">
+	
+	var persianArr = jd_to_persian(gregorian_to_jd(<%=yearValue %>,<%=monthValue %> + 1,<%= dayValue %>));
 	  $('#<%= randomNamespace %>displayDate').datepicker({
           changeMonth: true,
-          changeYear: true
+          changeYear: true,
+          defaultDate: new JalaliDate(persianArr[0],persianArr[1]-1 ,persianArr[2] )
       });
+
+	  $('#<%= randomNamespace %>displayDate').change(function(){
+		  var persianDateArr = $('#<%= randomNamespace %>displayDate').val().split('/');
+
+		 var gregorianDateArr= jd_to_gregorian(persian_to_jd(parseInt(persianDateArr[2]),parseInt(persianDateArr[1]),parseInt(persianDateArr[0])));
+		 $('#<%= dayParamId %>').val(gregorianDateArr[2]);
+		 $('#<%= monthParamId %>').val(gregorianDateArr[1]-1);
+		 $('#<%= yearParamId %>').val(gregorianDateArr[0]);
+	  });
 	</script>
 	
 <%} else{ %>
