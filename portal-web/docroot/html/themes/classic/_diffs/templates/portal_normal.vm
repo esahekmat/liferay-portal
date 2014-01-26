@@ -2,7 +2,7 @@
 
 #parse ($init)
 
-<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+<html class="$root_css_class" lang="$w3c_language_id">
 
 <head>
 	<title>$the_title - $company_name</title>
@@ -20,7 +20,7 @@ $theme.include($body_top_include)
 
 #dockbar()
 
-<div class="container-fluid" id="wrapper">
+<div class="container-fluid" id="wrapper" dir="#language ("lang.dir")">
 	<header id="banner" role="banner">
 		<div id="heading">
 			<h1 class="site-title">
@@ -62,7 +62,7 @@ $theme.include($body_top_include)
 
 	<footer id="footer" role="contentinfo">
 		<p class="powered-by">
-			#language ("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
+			#language ("powered-by") <a href="http://www.behpardaz.net" rel="external">Behpardaz Co.</a>
 		</p>
 	</footer>
 </div>
