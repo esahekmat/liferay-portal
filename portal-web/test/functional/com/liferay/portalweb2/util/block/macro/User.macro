@@ -1,5 +1,5 @@
 <definition>
-	<var name="userEmailAddress" value="test@liferay.com" />
+	<var name="userEmailAddress" value="test@behpardaz.net" />
 	<var name="password" value="test" />
 
 	<command name="activateCP">
