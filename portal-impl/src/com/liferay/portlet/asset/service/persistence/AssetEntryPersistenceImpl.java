@@ -3589,7 +3589,7 @@ public class AssetEntryPersistenceImpl extends BasePersistenceImpl<AssetEntry>
 		}
 
 		EntityCacheUtil.putResult(AssetEntryModelImpl.ENTITY_CACHE_ENABLED,
-			AssetEntryImpl.class, assetEntry.getPrimaryKey(), assetEntry);
+			AssetEntryImpl.class, assetEntry.getPrimaryKey(), assetEntry, false);
 
 		clearUniqueFindersCache(assetEntry);
 		cacheUniqueFindersCache(assetEntry);
@@ -4201,9 +4201,6 @@ public class AssetEntryPersistenceImpl extends BasePersistenceImpl<AssetEntry>
 		catch (Exception e) {
 			throw processException(e);
 		}
-		finally {
-			FinderCacheUtil.clearCache(AssetEntryModelImpl.MAPPING_TABLE_ASSETENTRIES_ASSETCATEGORIES_NAME);
-		}
 	}
 
 	/**
@@ -4490,9 +4487,6 @@ public class AssetEntryPersistenceImpl extends BasePersistenceImpl<AssetEntry>
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(AssetEntryModelImpl.MAPPING_TABLE_ASSETENTRIES_ASSETTAGS_NAME);
 		}
 	}
 

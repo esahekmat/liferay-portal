@@ -8946,7 +8946,7 @@ public class RolePersistenceImpl extends BasePersistenceImpl<Role>
 		}
 
 		EntityCacheUtil.putResult(RoleModelImpl.ENTITY_CACHE_ENABLED,
-			RoleImpl.class, role.getPrimaryKey(), role);
+			RoleImpl.class, role.getPrimaryKey(), role, false);
 
 		clearUniqueFindersCache(role);
 		cacheUniqueFindersCache(role);
@@ -8966,6 +8966,7 @@ public class RolePersistenceImpl extends BasePersistenceImpl<Role>
 		roleImpl.setNew(role.isNew());
 		roleImpl.setPrimaryKey(role.getPrimaryKey());
 
+		roleImpl.setMvccVersion(role.getMvccVersion());
 		roleImpl.setUuid(role.getUuid());
 		roleImpl.setRoleId(role.getRoleId());
 		roleImpl.setCompanyId(role.getCompanyId());
@@ -9524,9 +9525,6 @@ public class RolePersistenceImpl extends BasePersistenceImpl<Role>
 		catch (Exception e) {
 			throw processException(e);
 		}
-		finally {
-			FinderCacheUtil.clearCache(RoleModelImpl.MAPPING_TABLE_GROUPS_ROLES_NAME);
-		}
 	}
 
 	/**
@@ -9796,9 +9794,6 @@ public class RolePersistenceImpl extends BasePersistenceImpl<Role>
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(RoleModelImpl.MAPPING_TABLE_USERS_ROLES_NAME);
 		}
 	}
 

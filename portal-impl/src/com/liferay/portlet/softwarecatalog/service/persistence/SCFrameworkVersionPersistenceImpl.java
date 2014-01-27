@@ -2652,7 +2652,7 @@ public class SCFrameworkVersionPersistenceImpl extends BasePersistenceImpl<SCFra
 
 		EntityCacheUtil.putResult(SCFrameworkVersionModelImpl.ENTITY_CACHE_ENABLED,
 			SCFrameworkVersionImpl.class, scFrameworkVersion.getPrimaryKey(),
-			scFrameworkVersion);
+			scFrameworkVersion, false);
 
 		scFrameworkVersion.resetOriginalValues();
 
@@ -3250,9 +3250,6 @@ public class SCFrameworkVersionPersistenceImpl extends BasePersistenceImpl<SCFra
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(SCFrameworkVersionModelImpl.MAPPING_TABLE_SCFRAMEWORKVERSI_SCPRODUCTVERS_NAME);
 		}
 	}
 

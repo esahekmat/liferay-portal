@@ -870,7 +870,8 @@ public class VirtualHostPersistenceImpl extends BasePersistenceImpl<VirtualHost>
 		}
 
 		EntityCacheUtil.putResult(VirtualHostModelImpl.ENTITY_CACHE_ENABLED,
-			VirtualHostImpl.class, virtualHost.getPrimaryKey(), virtualHost);
+			VirtualHostImpl.class, virtualHost.getPrimaryKey(), virtualHost,
+			false);
 
 		clearUniqueFindersCache(virtualHost);
 		cacheUniqueFindersCache(virtualHost);
@@ -890,6 +891,7 @@ public class VirtualHostPersistenceImpl extends BasePersistenceImpl<VirtualHost>
 		virtualHostImpl.setNew(virtualHost.isNew());
 		virtualHostImpl.setPrimaryKey(virtualHost.getPrimaryKey());
 
+		virtualHostImpl.setMvccVersion(virtualHost.getMvccVersion());
 		virtualHostImpl.setVirtualHostId(virtualHost.getVirtualHostId());
 		virtualHostImpl.setCompanyId(virtualHost.getCompanyId());
 		virtualHostImpl.setLayoutSetId(virtualHost.getLayoutSetId());

@@ -593,7 +593,8 @@ public class WebDAVPropsPersistenceImpl extends BasePersistenceImpl<WebDAVProps>
 		}
 
 		EntityCacheUtil.putResult(WebDAVPropsModelImpl.ENTITY_CACHE_ENABLED,
-			WebDAVPropsImpl.class, webDAVProps.getPrimaryKey(), webDAVProps);
+			WebDAVPropsImpl.class, webDAVProps.getPrimaryKey(), webDAVProps,
+			false);
 
 		clearUniqueFindersCache(webDAVProps);
 		cacheUniqueFindersCache(webDAVProps);
@@ -613,6 +614,7 @@ public class WebDAVPropsPersistenceImpl extends BasePersistenceImpl<WebDAVProps>
 		webDAVPropsImpl.setNew(webDAVProps.isNew());
 		webDAVPropsImpl.setPrimaryKey(webDAVProps.getPrimaryKey());
 
+		webDAVPropsImpl.setMvccVersion(webDAVProps.getMvccVersion());
 		webDAVPropsImpl.setWebDavPropsId(webDAVProps.getWebDavPropsId());
 		webDAVPropsImpl.setCompanyId(webDAVProps.getCompanyId());
 		webDAVPropsImpl.setCreateDate(webDAVProps.getCreateDate());

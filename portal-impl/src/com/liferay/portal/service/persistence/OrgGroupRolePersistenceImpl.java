@@ -1320,7 +1320,8 @@ public class OrgGroupRolePersistenceImpl extends BasePersistenceImpl<OrgGroupRol
 		}
 
 		EntityCacheUtil.putResult(OrgGroupRoleModelImpl.ENTITY_CACHE_ENABLED,
-			OrgGroupRoleImpl.class, orgGroupRole.getPrimaryKey(), orgGroupRole);
+			OrgGroupRoleImpl.class, orgGroupRole.getPrimaryKey(), orgGroupRole,
+			false);
 
 		orgGroupRole.resetOriginalValues();
 
@@ -1337,6 +1338,7 @@ public class OrgGroupRolePersistenceImpl extends BasePersistenceImpl<OrgGroupRol
 		orgGroupRoleImpl.setNew(orgGroupRole.isNew());
 		orgGroupRoleImpl.setPrimaryKey(orgGroupRole.getPrimaryKey());
 
+		orgGroupRoleImpl.setMvccVersion(orgGroupRole.getMvccVersion());
 		orgGroupRoleImpl.setOrganizationId(orgGroupRole.getOrganizationId());
 		orgGroupRoleImpl.setGroupId(orgGroupRole.getGroupId());
 		orgGroupRoleImpl.setRoleId(orgGroupRole.getRoleId());

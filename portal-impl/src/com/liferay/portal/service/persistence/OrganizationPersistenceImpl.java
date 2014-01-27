@@ -6912,7 +6912,8 @@ public class OrganizationPersistenceImpl extends BasePersistenceImpl<Organizatio
 		}
 
 		EntityCacheUtil.putResult(OrganizationModelImpl.ENTITY_CACHE_ENABLED,
-			OrganizationImpl.class, organization.getPrimaryKey(), organization);
+			OrganizationImpl.class, organization.getPrimaryKey(), organization,
+			false);
 
 		clearUniqueFindersCache(organization);
 		cacheUniqueFindersCache(organization);
@@ -6932,6 +6933,7 @@ public class OrganizationPersistenceImpl extends BasePersistenceImpl<Organizatio
 		organizationImpl.setNew(organization.isNew());
 		organizationImpl.setPrimaryKey(organization.getPrimaryKey());
 
+		organizationImpl.setMvccVersion(organization.getMvccVersion());
 		organizationImpl.setUuid(organization.getUuid());
 		organizationImpl.setOrganizationId(organization.getOrganizationId());
 		organizationImpl.setCompanyId(organization.getCompanyId());
@@ -7499,9 +7501,6 @@ public class OrganizationPersistenceImpl extends BasePersistenceImpl<Organizatio
 		catch (Exception e) {
 			throw processException(e);
 		}
-		finally {
-			FinderCacheUtil.clearCache(OrganizationModelImpl.MAPPING_TABLE_GROUPS_ORGS_NAME);
-		}
 	}
 
 	/**
@@ -7774,9 +7773,6 @@ public class OrganizationPersistenceImpl extends BasePersistenceImpl<Organizatio
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(OrganizationModelImpl.MAPPING_TABLE_USERS_ORGS_NAME);
 		}
 	}
 

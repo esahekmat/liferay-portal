@@ -771,7 +771,7 @@ public class ImagePersistenceImpl extends BasePersistenceImpl<Image>
 		}
 
 		EntityCacheUtil.putResult(ImageModelImpl.ENTITY_CACHE_ENABLED,
-			ImageImpl.class, image.getPrimaryKey(), image);
+			ImageImpl.class, image.getPrimaryKey(), image, false);
 
 		image.resetOriginalValues();
 
@@ -788,6 +788,7 @@ public class ImagePersistenceImpl extends BasePersistenceImpl<Image>
 		imageImpl.setNew(image.isNew());
 		imageImpl.setPrimaryKey(image.getPrimaryKey());
 
+		imageImpl.setMvccVersion(image.getMvccVersion());
 		imageImpl.setImageId(image.getImageId());
 		imageImpl.setModifiedDate(image.getModifiedDate());
 		imageImpl.setType(image.getType());

@@ -2950,7 +2950,7 @@ public class UserGroupGroupRolePersistenceImpl extends BasePersistenceImpl<UserG
 
 		EntityCacheUtil.putResult(UserGroupGroupRoleModelImpl.ENTITY_CACHE_ENABLED,
 			UserGroupGroupRoleImpl.class, userGroupGroupRole.getPrimaryKey(),
-			userGroupGroupRole);
+			userGroupGroupRole, false);
 
 		userGroupGroupRole.resetOriginalValues();
 
@@ -2968,6 +2968,7 @@ public class UserGroupGroupRolePersistenceImpl extends BasePersistenceImpl<UserG
 		userGroupGroupRoleImpl.setNew(userGroupGroupRole.isNew());
 		userGroupGroupRoleImpl.setPrimaryKey(userGroupGroupRole.getPrimaryKey());
 
+		userGroupGroupRoleImpl.setMvccVersion(userGroupGroupRole.getMvccVersion());
 		userGroupGroupRoleImpl.setUserGroupId(userGroupGroupRole.getUserGroupId());
 		userGroupGroupRoleImpl.setGroupId(userGroupGroupRole.getGroupId());
 		userGroupGroupRoleImpl.setRoleId(userGroupGroupRole.getRoleId());

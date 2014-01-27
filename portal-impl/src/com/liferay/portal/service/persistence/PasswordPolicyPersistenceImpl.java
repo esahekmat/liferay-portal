@@ -3795,7 +3795,7 @@ public class PasswordPolicyPersistenceImpl extends BasePersistenceImpl<PasswordP
 
 		EntityCacheUtil.putResult(PasswordPolicyModelImpl.ENTITY_CACHE_ENABLED,
 			PasswordPolicyImpl.class, passwordPolicy.getPrimaryKey(),
-			passwordPolicy);
+			passwordPolicy, false);
 
 		clearUniqueFindersCache(passwordPolicy);
 		cacheUniqueFindersCache(passwordPolicy);
@@ -3815,6 +3815,7 @@ public class PasswordPolicyPersistenceImpl extends BasePersistenceImpl<PasswordP
 		passwordPolicyImpl.setNew(passwordPolicy.isNew());
 		passwordPolicyImpl.setPrimaryKey(passwordPolicy.getPrimaryKey());
 
+		passwordPolicyImpl.setMvccVersion(passwordPolicy.getMvccVersion());
 		passwordPolicyImpl.setUuid(passwordPolicy.getUuid());
 		passwordPolicyImpl.setPasswordPolicyId(passwordPolicy.getPasswordPolicyId());
 		passwordPolicyImpl.setCompanyId(passwordPolicy.getCompanyId());

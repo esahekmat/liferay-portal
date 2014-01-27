@@ -597,7 +597,7 @@ public class TicketPersistenceImpl extends BasePersistenceImpl<Ticket>
 		}
 
 		EntityCacheUtil.putResult(TicketModelImpl.ENTITY_CACHE_ENABLED,
-			TicketImpl.class, ticket.getPrimaryKey(), ticket);
+			TicketImpl.class, ticket.getPrimaryKey(), ticket, false);
 
 		clearUniqueFindersCache(ticket);
 		cacheUniqueFindersCache(ticket);
@@ -617,6 +617,7 @@ public class TicketPersistenceImpl extends BasePersistenceImpl<Ticket>
 		ticketImpl.setNew(ticket.isNew());
 		ticketImpl.setPrimaryKey(ticket.getPrimaryKey());
 
+		ticketImpl.setMvccVersion(ticket.getMvccVersion());
 		ticketImpl.setTicketId(ticket.getTicketId());
 		ticketImpl.setCompanyId(ticket.getCompanyId());
 		ticketImpl.setCreateDate(ticket.getCreateDate());

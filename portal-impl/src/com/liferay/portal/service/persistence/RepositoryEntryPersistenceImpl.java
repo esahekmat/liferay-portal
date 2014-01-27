@@ -2624,7 +2624,7 @@ public class RepositoryEntryPersistenceImpl extends BasePersistenceImpl<Reposito
 
 		EntityCacheUtil.putResult(RepositoryEntryModelImpl.ENTITY_CACHE_ENABLED,
 			RepositoryEntryImpl.class, repositoryEntry.getPrimaryKey(),
-			repositoryEntry);
+			repositoryEntry, false);
 
 		clearUniqueFindersCache(repositoryEntry);
 		cacheUniqueFindersCache(repositoryEntry);
@@ -2644,6 +2644,7 @@ public class RepositoryEntryPersistenceImpl extends BasePersistenceImpl<Reposito
 		repositoryEntryImpl.setNew(repositoryEntry.isNew());
 		repositoryEntryImpl.setPrimaryKey(repositoryEntry.getPrimaryKey());
 
+		repositoryEntryImpl.setMvccVersion(repositoryEntry.getMvccVersion());
 		repositoryEntryImpl.setUuid(repositoryEntry.getUuid());
 		repositoryEntryImpl.setRepositoryEntryId(repositoryEntry.getRepositoryEntryId());
 		repositoryEntryImpl.setGroupId(repositoryEntry.getGroupId());

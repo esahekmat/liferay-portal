@@ -2322,7 +2322,8 @@ public class LayoutBranchPersistenceImpl extends BasePersistenceImpl<LayoutBranc
 		}
 
 		EntityCacheUtil.putResult(LayoutBranchModelImpl.ENTITY_CACHE_ENABLED,
-			LayoutBranchImpl.class, layoutBranch.getPrimaryKey(), layoutBranch);
+			LayoutBranchImpl.class, layoutBranch.getPrimaryKey(), layoutBranch,
+			false);
 
 		clearUniqueFindersCache(layoutBranch);
 		cacheUniqueFindersCache(layoutBranch);
@@ -2342,6 +2343,7 @@ public class LayoutBranchPersistenceImpl extends BasePersistenceImpl<LayoutBranc
 		layoutBranchImpl.setNew(layoutBranch.isNew());
 		layoutBranchImpl.setPrimaryKey(layoutBranch.getPrimaryKey());
 
+		layoutBranchImpl.setMvccVersion(layoutBranch.getMvccVersion());
 		layoutBranchImpl.setLayoutBranchId(layoutBranch.getLayoutBranchId());
 		layoutBranchImpl.setGroupId(layoutBranch.getGroupId());
 		layoutBranchImpl.setCompanyId(layoutBranch.getCompanyId());

@@ -1507,7 +1507,7 @@ public class AssetTagPersistenceImpl extends BasePersistenceImpl<AssetTag>
 		}
 
 		EntityCacheUtil.putResult(AssetTagModelImpl.ENTITY_CACHE_ENABLED,
-			AssetTagImpl.class, assetTag.getPrimaryKey(), assetTag);
+			AssetTagImpl.class, assetTag.getPrimaryKey(), assetTag, false);
 
 		clearUniqueFindersCache(assetTag);
 		cacheUniqueFindersCache(assetTag);
@@ -2095,9 +2095,6 @@ public class AssetTagPersistenceImpl extends BasePersistenceImpl<AssetTag>
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(AssetTagModelImpl.MAPPING_TABLE_ASSETENTRIES_ASSETTAGS_NAME);
 		}
 	}
 

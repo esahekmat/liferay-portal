@@ -301,7 +301,8 @@ public class ClusterGroupPersistenceImpl extends BasePersistenceImpl<ClusterGrou
 		}
 
 		EntityCacheUtil.putResult(ClusterGroupModelImpl.ENTITY_CACHE_ENABLED,
-			ClusterGroupImpl.class, clusterGroup.getPrimaryKey(), clusterGroup);
+			ClusterGroupImpl.class, clusterGroup.getPrimaryKey(), clusterGroup,
+			false);
 
 		clusterGroup.resetOriginalValues();
 
@@ -318,6 +319,7 @@ public class ClusterGroupPersistenceImpl extends BasePersistenceImpl<ClusterGrou
 		clusterGroupImpl.setNew(clusterGroup.isNew());
 		clusterGroupImpl.setPrimaryKey(clusterGroup.getPrimaryKey());
 
+		clusterGroupImpl.setMvccVersion(clusterGroup.getMvccVersion());
 		clusterGroupImpl.setClusterGroupId(clusterGroup.getClusterGroupId());
 		clusterGroupImpl.setName(clusterGroup.getName());
 		clusterGroupImpl.setClusterNodeIds(clusterGroup.getClusterNodeIds());

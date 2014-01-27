@@ -3102,7 +3102,7 @@ public class UserNotificationEventPersistenceImpl extends BasePersistenceImpl<Us
 
 		EntityCacheUtil.putResult(UserNotificationEventModelImpl.ENTITY_CACHE_ENABLED,
 			UserNotificationEventImpl.class,
-			userNotificationEvent.getPrimaryKey(), userNotificationEvent);
+			userNotificationEvent.getPrimaryKey(), userNotificationEvent, false);
 
 		userNotificationEvent.resetOriginalValues();
 
@@ -3120,6 +3120,7 @@ public class UserNotificationEventPersistenceImpl extends BasePersistenceImpl<Us
 		userNotificationEventImpl.setNew(userNotificationEvent.isNew());
 		userNotificationEventImpl.setPrimaryKey(userNotificationEvent.getPrimaryKey());
 
+		userNotificationEventImpl.setMvccVersion(userNotificationEvent.getMvccVersion());
 		userNotificationEventImpl.setUuid(userNotificationEvent.getUuid());
 		userNotificationEventImpl.setUserNotificationEventId(userNotificationEvent.getUserNotificationEventId());
 		userNotificationEventImpl.setCompanyId(userNotificationEvent.getCompanyId());

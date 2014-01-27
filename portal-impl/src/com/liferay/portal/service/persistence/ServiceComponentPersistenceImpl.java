@@ -1218,7 +1218,7 @@ public class ServiceComponentPersistenceImpl extends BasePersistenceImpl<Service
 
 		EntityCacheUtil.putResult(ServiceComponentModelImpl.ENTITY_CACHE_ENABLED,
 			ServiceComponentImpl.class, serviceComponent.getPrimaryKey(),
-			serviceComponent);
+			serviceComponent, false);
 
 		clearUniqueFindersCache(serviceComponent);
 		cacheUniqueFindersCache(serviceComponent);
@@ -1239,6 +1239,7 @@ public class ServiceComponentPersistenceImpl extends BasePersistenceImpl<Service
 		serviceComponentImpl.setNew(serviceComponent.isNew());
 		serviceComponentImpl.setPrimaryKey(serviceComponent.getPrimaryKey());
 
+		serviceComponentImpl.setMvccVersion(serviceComponent.getMvccVersion());
 		serviceComponentImpl.setServiceComponentId(serviceComponent.getServiceComponentId());
 		serviceComponentImpl.setBuildNamespace(serviceComponent.getBuildNamespace());
 		serviceComponentImpl.setBuildNumber(serviceComponent.getBuildNumber());

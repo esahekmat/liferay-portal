@@ -9172,7 +9172,8 @@ public class DDMStructurePersistenceImpl extends BasePersistenceImpl<DDMStructur
 		}
 
 		EntityCacheUtil.putResult(DDMStructureModelImpl.ENTITY_CACHE_ENABLED,
-			DDMStructureImpl.class, ddmStructure.getPrimaryKey(), ddmStructure);
+			DDMStructureImpl.class, ddmStructure.getPrimaryKey(), ddmStructure,
+			false);
 
 		clearUniqueFindersCache(ddmStructure);
 		cacheUniqueFindersCache(ddmStructure);
@@ -9776,9 +9777,6 @@ public class DDMStructurePersistenceImpl extends BasePersistenceImpl<DDMStructur
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(DDMStructureModelImpl.MAPPING_TABLE_DLFILEENTRYTYPES_DDMSTRUCTURES_NAME);
 		}
 	}
 

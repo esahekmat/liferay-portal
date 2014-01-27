@@ -1640,7 +1640,7 @@ public class CountryPersistenceImpl extends BasePersistenceImpl<Country>
 		}
 
 		EntityCacheUtil.putResult(CountryModelImpl.ENTITY_CACHE_ENABLED,
-			CountryImpl.class, country.getPrimaryKey(), country);
+			CountryImpl.class, country.getPrimaryKey(), country, false);
 
 		clearUniqueFindersCache(country);
 		cacheUniqueFindersCache(country);
@@ -1660,6 +1660,7 @@ public class CountryPersistenceImpl extends BasePersistenceImpl<Country>
 		countryImpl.setNew(country.isNew());
 		countryImpl.setPrimaryKey(country.getPrimaryKey());
 
+		countryImpl.setMvccVersion(country.getMvccVersion());
 		countryImpl.setCountryId(country.getCountryId());
 		countryImpl.setName(country.getName());
 		countryImpl.setA2(country.getA2());

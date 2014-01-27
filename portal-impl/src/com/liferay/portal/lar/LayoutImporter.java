@@ -43,7 +43,6 @@ import com.liferay.portal.kernel.search.Indexer;
 import com.liferay.portal.kernel.search.IndexerRegistryUtil;
 import com.liferay.portal.kernel.util.ArrayUtil;
 import com.liferay.portal.kernel.util.Constants;
-import com.liferay.portal.kernel.util.FileUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.portal.kernel.util.MapUtil;
@@ -423,17 +422,8 @@ public class LayoutImporter {
 				logoPath);
 
 			if (ArrayUtil.isNotEmpty(iconBytes)) {
-				File logo = null;
-
-				try {
-					logo = FileUtil.createTempFile(iconBytes);
-
-					LayoutSetLocalServiceUtil.updateLogo(
-						groupId, privateLayout, true, logo);
-				}
-				finally {
-					FileUtil.delete(logo);
-				}
+				LayoutSetLocalServiceUtil.updateLogo(
+					groupId, privateLayout, true, iconBytes);
 			}
 			else {
 				LayoutSetLocalServiceUtil.updateLogo(
@@ -692,6 +682,8 @@ public class LayoutImporter {
 		long lastMergeTime = System.currentTimeMillis();
 
 		for (Layout layout : newLayouts) {
+			layout = LayoutLocalServiceUtil.getLayout(layout.getPlid());
+
 			boolean modifiedTypeSettingsProperties = false;
 
 			UnicodeProperties typeSettingsProperties =
@@ -736,6 +728,13 @@ public class LayoutImporter {
 		if (layoutsImportMode.equals(
 				PortletDataHandlerKeys.
 					LAYOUTS_IMPORT_MODE_CREATED_FROM_PROTOTYPE)) {
+
+			// The layout set may be stale because LayoutUtil#update(layout)
+			// triggers LayoutSetPrototypeLayoutListener and that may have
+			// updated this layout set
+
+			layoutSet = LayoutSetLocalServiceUtil.getLayoutSet(
+				layoutSet.getLayoutSetId());
 
 			UnicodeProperties settingsProperties =
 				layoutSet.getSettingsProperties();

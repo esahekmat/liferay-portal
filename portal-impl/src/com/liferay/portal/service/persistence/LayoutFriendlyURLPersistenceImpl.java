@@ -5295,7 +5295,7 @@ public class LayoutFriendlyURLPersistenceImpl extends BasePersistenceImpl<Layout
 
 		EntityCacheUtil.putResult(LayoutFriendlyURLModelImpl.ENTITY_CACHE_ENABLED,
 			LayoutFriendlyURLImpl.class, layoutFriendlyURL.getPrimaryKey(),
-			layoutFriendlyURL);
+			layoutFriendlyURL, false);
 
 		clearUniqueFindersCache(layoutFriendlyURL);
 		cacheUniqueFindersCache(layoutFriendlyURL);
@@ -5316,6 +5316,7 @@ public class LayoutFriendlyURLPersistenceImpl extends BasePersistenceImpl<Layout
 		layoutFriendlyURLImpl.setNew(layoutFriendlyURL.isNew());
 		layoutFriendlyURLImpl.setPrimaryKey(layoutFriendlyURL.getPrimaryKey());
 
+		layoutFriendlyURLImpl.setMvccVersion(layoutFriendlyURL.getMvccVersion());
 		layoutFriendlyURLImpl.setUuid(layoutFriendlyURL.getUuid());
 		layoutFriendlyURLImpl.setLayoutFriendlyURLId(layoutFriendlyURL.getLayoutFriendlyURLId());
 		layoutFriendlyURLImpl.setGroupId(layoutFriendlyURL.getGroupId());

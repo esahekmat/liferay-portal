@@ -1215,7 +1215,7 @@ public class ResourceActionPersistenceImpl extends BasePersistenceImpl<ResourceA
 
 		EntityCacheUtil.putResult(ResourceActionModelImpl.ENTITY_CACHE_ENABLED,
 			ResourceActionImpl.class, resourceAction.getPrimaryKey(),
-			resourceAction);
+			resourceAction, false);
 
 		clearUniqueFindersCache(resourceAction);
 		cacheUniqueFindersCache(resourceAction);
@@ -1235,6 +1235,7 @@ public class ResourceActionPersistenceImpl extends BasePersistenceImpl<ResourceA
 		resourceActionImpl.setNew(resourceAction.isNew());
 		resourceActionImpl.setPrimaryKey(resourceAction.getPrimaryKey());
 
+		resourceActionImpl.setMvccVersion(resourceAction.getMvccVersion());
 		resourceActionImpl.setResourceActionId(resourceAction.getResourceActionId());
 		resourceActionImpl.setName(resourceAction.getName());
 		resourceActionImpl.setActionId(resourceAction.getActionId());

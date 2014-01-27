@@ -4225,7 +4225,7 @@ public class PhonePersistenceImpl extends BasePersistenceImpl<Phone>
 		}
 
 		EntityCacheUtil.putResult(PhoneModelImpl.ENTITY_CACHE_ENABLED,
-			PhoneImpl.class, phone.getPrimaryKey(), phone);
+			PhoneImpl.class, phone.getPrimaryKey(), phone, false);
 
 		phone.resetOriginalValues();
 
@@ -4242,6 +4242,7 @@ public class PhonePersistenceImpl extends BasePersistenceImpl<Phone>
 		phoneImpl.setNew(phone.isNew());
 		phoneImpl.setPrimaryKey(phone.getPrimaryKey());
 
+		phoneImpl.setMvccVersion(phone.getMvccVersion());
 		phoneImpl.setUuid(phone.getUuid());
 		phoneImpl.setPhoneId(phone.getPhoneId());
 		phoneImpl.setCompanyId(phone.getCompanyId());

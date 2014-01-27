@@ -9462,7 +9462,7 @@ public class DLFolderPersistenceImpl extends BasePersistenceImpl<DLFolder>
 		}
 
 		EntityCacheUtil.putResult(DLFolderModelImpl.ENTITY_CACHE_ENABLED,
-			DLFolderImpl.class, dlFolder.getPrimaryKey(), dlFolder);
+			DLFolderImpl.class, dlFolder.getPrimaryKey(), dlFolder, false);
 
 		clearUniqueFindersCache(dlFolder);
 		cacheUniqueFindersCache(dlFolder);
@@ -10069,9 +10069,6 @@ public class DLFolderPersistenceImpl extends BasePersistenceImpl<DLFolder>
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(DLFolderModelImpl.MAPPING_TABLE_DLFILEENTRYTYPES_DLFOLDERS_NAME);
 		}
 	}
 

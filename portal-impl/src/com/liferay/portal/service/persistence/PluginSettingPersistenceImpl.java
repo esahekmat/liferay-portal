@@ -1213,7 +1213,7 @@ public class PluginSettingPersistenceImpl extends BasePersistenceImpl<PluginSett
 
 		EntityCacheUtil.putResult(PluginSettingModelImpl.ENTITY_CACHE_ENABLED,
 			PluginSettingImpl.class, pluginSetting.getPrimaryKey(),
-			pluginSetting);
+			pluginSetting, false);
 
 		clearUniqueFindersCache(pluginSetting);
 		cacheUniqueFindersCache(pluginSetting);
@@ -1233,6 +1233,7 @@ public class PluginSettingPersistenceImpl extends BasePersistenceImpl<PluginSett
 		pluginSettingImpl.setNew(pluginSetting.isNew());
 		pluginSettingImpl.setPrimaryKey(pluginSetting.getPrimaryKey());
 
+		pluginSettingImpl.setMvccVersion(pluginSetting.getMvccVersion());
 		pluginSettingImpl.setPluginSettingId(pluginSetting.getPluginSettingId());
 		pluginSettingImpl.setCompanyId(pluginSetting.getCompanyId());
 		pluginSettingImpl.setPluginId(pluginSetting.getPluginId());

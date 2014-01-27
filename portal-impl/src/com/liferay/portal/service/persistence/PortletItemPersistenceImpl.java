@@ -1910,7 +1910,8 @@ public class PortletItemPersistenceImpl extends BasePersistenceImpl<PortletItem>
 		}
 
 		EntityCacheUtil.putResult(PortletItemModelImpl.ENTITY_CACHE_ENABLED,
-			PortletItemImpl.class, portletItem.getPrimaryKey(), portletItem);
+			PortletItemImpl.class, portletItem.getPrimaryKey(), portletItem,
+			false);
 
 		clearUniqueFindersCache(portletItem);
 		cacheUniqueFindersCache(portletItem);
@@ -1930,6 +1931,7 @@ public class PortletItemPersistenceImpl extends BasePersistenceImpl<PortletItem>
 		portletItemImpl.setNew(portletItem.isNew());
 		portletItemImpl.setPrimaryKey(portletItem.getPrimaryKey());
 
+		portletItemImpl.setMvccVersion(portletItem.getMvccVersion());
 		portletItemImpl.setPortletItemId(portletItem.getPortletItemId());
 		portletItemImpl.setGroupId(portletItem.getGroupId());
 		portletItemImpl.setCompanyId(portletItem.getCompanyId());

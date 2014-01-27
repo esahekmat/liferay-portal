@@ -7891,7 +7891,7 @@ public class GroupPersistenceImpl extends BasePersistenceImpl<Group>
 		}
 
 		EntityCacheUtil.putResult(GroupModelImpl.ENTITY_CACHE_ENABLED,
-			GroupImpl.class, group.getPrimaryKey(), group);
+			GroupImpl.class, group.getPrimaryKey(), group, false);
 
 		clearUniqueFindersCache(group);
 		cacheUniqueFindersCache(group);
@@ -7911,6 +7911,7 @@ public class GroupPersistenceImpl extends BasePersistenceImpl<Group>
 		groupImpl.setNew(group.isNew());
 		groupImpl.setPrimaryKey(group.getPrimaryKey());
 
+		groupImpl.setMvccVersion(group.getMvccVersion());
 		groupImpl.setUuid(group.getUuid());
 		groupImpl.setGroupId(group.getGroupId());
 		groupImpl.setCompanyId(group.getCompanyId());
@@ -8490,9 +8491,6 @@ public class GroupPersistenceImpl extends BasePersistenceImpl<Group>
 		catch (Exception e) {
 			throw processException(e);
 		}
-		finally {
-			FinderCacheUtil.clearCache(GroupModelImpl.MAPPING_TABLE_GROUPS_ORGS_NAME);
-		}
 	}
 
 	/**
@@ -8762,9 +8760,6 @@ public class GroupPersistenceImpl extends BasePersistenceImpl<Group>
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(GroupModelImpl.MAPPING_TABLE_GROUPS_ROLES_NAME);
 		}
 	}
 
@@ -9050,9 +9045,6 @@ public class GroupPersistenceImpl extends BasePersistenceImpl<Group>
 		catch (Exception e) {
 			throw processException(e);
 		}
-		finally {
-			FinderCacheUtil.clearCache(GroupModelImpl.MAPPING_TABLE_GROUPS_USERGROUPS_NAME);
-		}
 	}
 
 	/**
@@ -9322,9 +9314,6 @@ public class GroupPersistenceImpl extends BasePersistenceImpl<Group>
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(GroupModelImpl.MAPPING_TABLE_USERS_GROUPS_NAME);
 		}
 	}
 

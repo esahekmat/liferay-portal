@@ -1624,7 +1624,7 @@ public class CompanyPersistenceImpl extends BasePersistenceImpl<Company>
 		}
 
 		EntityCacheUtil.putResult(CompanyModelImpl.ENTITY_CACHE_ENABLED,
-			CompanyImpl.class, company.getPrimaryKey(), company);
+			CompanyImpl.class, company.getPrimaryKey(), company, false);
 
 		clearUniqueFindersCache(company);
 		cacheUniqueFindersCache(company);
@@ -1644,6 +1644,7 @@ public class CompanyPersistenceImpl extends BasePersistenceImpl<Company>
 		companyImpl.setNew(company.isNew());
 		companyImpl.setPrimaryKey(company.getPrimaryKey());
 
+		companyImpl.setMvccVersion(company.getMvccVersion());
 		companyImpl.setCompanyId(company.getCompanyId());
 		companyImpl.setAccountId(company.getAccountId());
 		companyImpl.setWebId(company.getWebId());

@@ -591,6 +591,15 @@ public class LayoutTypePortletImpl
 			return false;
 		}
 
+		if (isCustomizable() && isCustomizedView()) {
+			LayoutTypePortletImpl defaultLayoutTypePortletImpl =
+				getDefaultLayoutTypePortletImpl();
+
+			if (defaultLayoutTypePortletImpl.hasNonstaticPortletId(portletId)) {
+				return false;
+			}
+		}
+
 		if (!strict &&
 			((PortletPreferencesLocalServiceUtil.getPortletPreferencesCount(
 				PortletKeys.PREFS_OWNER_TYPE_LAYOUT, layout.getPlid(),
@@ -775,6 +784,10 @@ public class LayoutTypePortletImpl
 	public void movePortletId(
 			long userId, String portletId, String columnId, int columnPos)
 		throws PortalException, SystemException {
+
+		if (!hasPortletId(portletId)) {
+			return;
+		}
 
 		_enablePortletLayoutListener = false;
 
@@ -1431,6 +1444,22 @@ public class LayoutTypePortletImpl
 		Layout layout = getLayout();
 
 		return layout.getCompanyId();
+	}
+
+	protected LayoutTypePortletImpl getDefaultLayoutTypePortletImpl() {
+		if (!isCustomizedView()) {
+			return this;
+		}
+
+		LayoutTypePortletImpl defaultLayoutTypePortletImpl =
+			new LayoutTypePortletImpl(getLayout());
+
+		defaultLayoutTypePortletImpl._embeddedPortlets = _embeddedPortlets;
+		defaultLayoutTypePortletImpl._layoutSetPrototypeLayout =
+			_layoutSetPrototypeLayout;
+		defaultLayoutTypePortletImpl._updatePermission = _updatePermission;
+
+		return defaultLayoutTypePortletImpl;
 	}
 
 	protected List<Portlet> getEmbeddedPortlets(

@@ -2480,7 +2480,7 @@ public class MembershipRequestPersistenceImpl extends BasePersistenceImpl<Member
 
 		EntityCacheUtil.putResult(MembershipRequestModelImpl.ENTITY_CACHE_ENABLED,
 			MembershipRequestImpl.class, membershipRequest.getPrimaryKey(),
-			membershipRequest);
+			membershipRequest, false);
 
 		membershipRequest.resetOriginalValues();
 
@@ -2498,6 +2498,7 @@ public class MembershipRequestPersistenceImpl extends BasePersistenceImpl<Member
 		membershipRequestImpl.setNew(membershipRequest.isNew());
 		membershipRequestImpl.setPrimaryKey(membershipRequest.getPrimaryKey());
 
+		membershipRequestImpl.setMvccVersion(membershipRequest.getMvccVersion());
 		membershipRequestImpl.setMembershipRequestId(membershipRequest.getMembershipRequestId());
 		membershipRequestImpl.setGroupId(membershipRequest.getGroupId());
 		membershipRequestImpl.setCompanyId(membershipRequest.getCompanyId());

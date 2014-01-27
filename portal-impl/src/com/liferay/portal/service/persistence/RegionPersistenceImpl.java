@@ -2181,7 +2181,7 @@ public class RegionPersistenceImpl extends BasePersistenceImpl<Region>
 		}
 
 		EntityCacheUtil.putResult(RegionModelImpl.ENTITY_CACHE_ENABLED,
-			RegionImpl.class, region.getPrimaryKey(), region);
+			RegionImpl.class, region.getPrimaryKey(), region, false);
 
 		clearUniqueFindersCache(region);
 		cacheUniqueFindersCache(region);
@@ -2201,6 +2201,7 @@ public class RegionPersistenceImpl extends BasePersistenceImpl<Region>
 		regionImpl.setNew(region.isNew());
 		regionImpl.setPrimaryKey(region.getPrimaryKey());
 
+		regionImpl.setMvccVersion(region.getMvccVersion());
 		regionImpl.setRegionId(region.getRegionId());
 		regionImpl.setCountryId(region.getCountryId());
 		regionImpl.setRegionCode(region.getRegionCode());

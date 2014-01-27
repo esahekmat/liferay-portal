@@ -1857,7 +1857,8 @@ public class ResourceTypePermissionPersistenceImpl extends BasePersistenceImpl<R
 
 		EntityCacheUtil.putResult(ResourceTypePermissionModelImpl.ENTITY_CACHE_ENABLED,
 			ResourceTypePermissionImpl.class,
-			resourceTypePermission.getPrimaryKey(), resourceTypePermission);
+			resourceTypePermission.getPrimaryKey(), resourceTypePermission,
+			false);
 
 		clearUniqueFindersCache(resourceTypePermission);
 		cacheUniqueFindersCache(resourceTypePermission);
@@ -1878,6 +1879,7 @@ public class ResourceTypePermissionPersistenceImpl extends BasePersistenceImpl<R
 		resourceTypePermissionImpl.setNew(resourceTypePermission.isNew());
 		resourceTypePermissionImpl.setPrimaryKey(resourceTypePermission.getPrimaryKey());
 
+		resourceTypePermissionImpl.setMvccVersion(resourceTypePermission.getMvccVersion());
 		resourceTypePermissionImpl.setResourceTypePermissionId(resourceTypePermission.getResourceTypePermissionId());
 		resourceTypePermissionImpl.setCompanyId(resourceTypePermission.getCompanyId());
 		resourceTypePermissionImpl.setGroupId(resourceTypePermission.getGroupId());

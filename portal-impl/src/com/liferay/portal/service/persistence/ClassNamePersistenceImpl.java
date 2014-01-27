@@ -592,7 +592,7 @@ public class ClassNamePersistenceImpl extends BasePersistenceImpl<ClassName>
 		}
 
 		EntityCacheUtil.putResult(ClassNameModelImpl.ENTITY_CACHE_ENABLED,
-			ClassNameImpl.class, className.getPrimaryKey(), className);
+			ClassNameImpl.class, className.getPrimaryKey(), className, false);
 
 		clearUniqueFindersCache(className);
 		cacheUniqueFindersCache(className);
@@ -612,6 +612,7 @@ public class ClassNamePersistenceImpl extends BasePersistenceImpl<ClassName>
 		classNameImpl.setNew(className.isNew());
 		classNameImpl.setPrimaryKey(className.getPrimaryKey());
 
+		classNameImpl.setMvccVersion(className.getMvccVersion());
 		classNameImpl.setClassNameId(className.getClassNameId());
 		classNameImpl.setValue(className.getValue());
 

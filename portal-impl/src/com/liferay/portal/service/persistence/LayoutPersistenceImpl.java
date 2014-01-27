@@ -8604,7 +8604,7 @@ public class LayoutPersistenceImpl extends BasePersistenceImpl<Layout>
 		}
 
 		EntityCacheUtil.putResult(LayoutModelImpl.ENTITY_CACHE_ENABLED,
-			LayoutImpl.class, layout.getPrimaryKey(), layout);
+			LayoutImpl.class, layout.getPrimaryKey(), layout, false);
 
 		clearUniqueFindersCache(layout);
 		cacheUniqueFindersCache(layout);
@@ -8624,6 +8624,7 @@ public class LayoutPersistenceImpl extends BasePersistenceImpl<Layout>
 		layoutImpl.setNew(layout.isNew());
 		layoutImpl.setPrimaryKey(layout.getPrimaryKey());
 
+		layoutImpl.setMvccVersion(layout.getMvccVersion());
 		layoutImpl.setUuid(layout.getUuid());
 		layoutImpl.setPlid(layout.getPlid());
 		layoutImpl.setGroupId(layout.getGroupId());

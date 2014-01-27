@@ -4837,7 +4837,7 @@ public class PortletPreferencesPersistenceImpl extends BasePersistenceImpl<Portl
 
 		EntityCacheUtil.putResult(PortletPreferencesModelImpl.ENTITY_CACHE_ENABLED,
 			PortletPreferencesImpl.class, portletPreferences.getPrimaryKey(),
-			portletPreferences);
+			portletPreferences, false);
 
 		clearUniqueFindersCache(portletPreferences);
 		cacheUniqueFindersCache(portletPreferences);
@@ -4858,6 +4858,7 @@ public class PortletPreferencesPersistenceImpl extends BasePersistenceImpl<Portl
 		portletPreferencesImpl.setNew(portletPreferences.isNew());
 		portletPreferencesImpl.setPrimaryKey(portletPreferences.getPrimaryKey());
 
+		portletPreferencesImpl.setMvccVersion(portletPreferences.getMvccVersion());
 		portletPreferencesImpl.setPortletPreferencesId(portletPreferences.getPortletPreferencesId());
 		portletPreferencesImpl.setOwnerId(portletPreferences.getOwnerId());
 		portletPreferencesImpl.setOwnerType(portletPreferences.getOwnerType());

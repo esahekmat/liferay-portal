@@ -823,7 +823,7 @@ public class OrgLaborPersistenceImpl extends BasePersistenceImpl<OrgLabor>
 		}
 
 		EntityCacheUtil.putResult(OrgLaborModelImpl.ENTITY_CACHE_ENABLED,
-			OrgLaborImpl.class, orgLabor.getPrimaryKey(), orgLabor);
+			OrgLaborImpl.class, orgLabor.getPrimaryKey(), orgLabor, false);
 
 		orgLabor.resetOriginalValues();
 
@@ -840,6 +840,7 @@ public class OrgLaborPersistenceImpl extends BasePersistenceImpl<OrgLabor>
 		orgLaborImpl.setNew(orgLabor.isNew());
 		orgLaborImpl.setPrimaryKey(orgLabor.getPrimaryKey());
 
+		orgLaborImpl.setMvccVersion(orgLabor.getMvccVersion());
 		orgLaborImpl.setOrgLaborId(orgLabor.getOrgLaborId());
 		orgLaborImpl.setOrganizationId(orgLabor.getOrganizationId());
 		orgLaborImpl.setTypeId(orgLabor.getTypeId());

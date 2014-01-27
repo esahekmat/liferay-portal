@@ -1878,7 +1878,8 @@ public class UserTrackerPersistenceImpl extends BasePersistenceImpl<UserTracker>
 		}
 
 		EntityCacheUtil.putResult(UserTrackerModelImpl.ENTITY_CACHE_ENABLED,
-			UserTrackerImpl.class, userTracker.getPrimaryKey(), userTracker);
+			UserTrackerImpl.class, userTracker.getPrimaryKey(), userTracker,
+			false);
 
 		userTracker.resetOriginalValues();
 
@@ -1895,6 +1896,7 @@ public class UserTrackerPersistenceImpl extends BasePersistenceImpl<UserTracker>
 		userTrackerImpl.setNew(userTracker.isNew());
 		userTrackerImpl.setPrimaryKey(userTracker.getPrimaryKey());
 
+		userTrackerImpl.setMvccVersion(userTracker.getMvccVersion());
 		userTrackerImpl.setUserTrackerId(userTracker.getUserTrackerId());
 		userTrackerImpl.setCompanyId(userTracker.getCompanyId());
 		userTrackerImpl.setUserId(userTracker.getUserId());

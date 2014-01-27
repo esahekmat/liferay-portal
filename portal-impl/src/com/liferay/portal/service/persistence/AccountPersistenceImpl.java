@@ -300,7 +300,7 @@ public class AccountPersistenceImpl extends BasePersistenceImpl<Account>
 		}
 
 		EntityCacheUtil.putResult(AccountModelImpl.ENTITY_CACHE_ENABLED,
-			AccountImpl.class, account.getPrimaryKey(), account);
+			AccountImpl.class, account.getPrimaryKey(), account, false);
 
 		account.resetOriginalValues();
 
@@ -317,6 +317,7 @@ public class AccountPersistenceImpl extends BasePersistenceImpl<Account>
 		accountImpl.setNew(account.isNew());
 		accountImpl.setPrimaryKey(account.getPrimaryKey());
 
+		accountImpl.setMvccVersion(account.getMvccVersion());
 		accountImpl.setAccountId(account.getAccountId());
 		accountImpl.setCompanyId(account.getCompanyId());
 		accountImpl.setUserId(account.getUserId());

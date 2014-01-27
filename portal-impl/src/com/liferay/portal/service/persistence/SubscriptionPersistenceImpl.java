@@ -2705,7 +2705,8 @@ public class SubscriptionPersistenceImpl extends BasePersistenceImpl<Subscriptio
 		}
 
 		EntityCacheUtil.putResult(SubscriptionModelImpl.ENTITY_CACHE_ENABLED,
-			SubscriptionImpl.class, subscription.getPrimaryKey(), subscription);
+			SubscriptionImpl.class, subscription.getPrimaryKey(), subscription,
+			false);
 
 		clearUniqueFindersCache(subscription);
 		cacheUniqueFindersCache(subscription);
@@ -2725,6 +2726,7 @@ public class SubscriptionPersistenceImpl extends BasePersistenceImpl<Subscriptio
 		subscriptionImpl.setNew(subscription.isNew());
 		subscriptionImpl.setPrimaryKey(subscription.getPrimaryKey());
 
+		subscriptionImpl.setMvccVersion(subscription.getMvccVersion());
 		subscriptionImpl.setSubscriptionId(subscription.getSubscriptionId());
 		subscriptionImpl.setCompanyId(subscription.getCompanyId());
 		subscriptionImpl.setUserId(subscription.getUserId());

@@ -1486,7 +1486,7 @@ public class TeamPersistenceImpl extends BasePersistenceImpl<Team>
 		}
 
 		EntityCacheUtil.putResult(TeamModelImpl.ENTITY_CACHE_ENABLED,
-			TeamImpl.class, team.getPrimaryKey(), team);
+			TeamImpl.class, team.getPrimaryKey(), team, false);
 
 		clearUniqueFindersCache(team);
 		cacheUniqueFindersCache(team);
@@ -1506,6 +1506,7 @@ public class TeamPersistenceImpl extends BasePersistenceImpl<Team>
 		teamImpl.setNew(team.isNew());
 		teamImpl.setPrimaryKey(team.getPrimaryKey());
 
+		teamImpl.setMvccVersion(team.getMvccVersion());
 		teamImpl.setTeamId(team.getTeamId());
 		teamImpl.setCompanyId(team.getCompanyId());
 		teamImpl.setUserId(team.getUserId());
@@ -2057,9 +2058,6 @@ public class TeamPersistenceImpl extends BasePersistenceImpl<Team>
 		catch (Exception e) {
 			throw processException(e);
 		}
-		finally {
-			FinderCacheUtil.clearCache(TeamModelImpl.MAPPING_TABLE_USERS_TEAMS_NAME);
-		}
 	}
 
 	/**
@@ -2342,9 +2340,6 @@ public class TeamPersistenceImpl extends BasePersistenceImpl<Team>
 		}
 		catch (Exception e) {
 			throw processException(e);
-		}
-		finally {
-			FinderCacheUtil.clearCache(TeamModelImpl.MAPPING_TABLE_USERGROUPS_TEAMS_NAME);
 		}
 	}
 

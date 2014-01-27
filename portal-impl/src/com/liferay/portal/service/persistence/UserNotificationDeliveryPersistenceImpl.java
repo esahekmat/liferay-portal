@@ -1258,7 +1258,8 @@ public class UserNotificationDeliveryPersistenceImpl extends BasePersistenceImpl
 
 		EntityCacheUtil.putResult(UserNotificationDeliveryModelImpl.ENTITY_CACHE_ENABLED,
 			UserNotificationDeliveryImpl.class,
-			userNotificationDelivery.getPrimaryKey(), userNotificationDelivery);
+			userNotificationDelivery.getPrimaryKey(), userNotificationDelivery,
+			false);
 
 		clearUniqueFindersCache(userNotificationDelivery);
 		cacheUniqueFindersCache(userNotificationDelivery);
@@ -1279,6 +1280,7 @@ public class UserNotificationDeliveryPersistenceImpl extends BasePersistenceImpl
 		userNotificationDeliveryImpl.setNew(userNotificationDelivery.isNew());
 		userNotificationDeliveryImpl.setPrimaryKey(userNotificationDelivery.getPrimaryKey());
 
+		userNotificationDeliveryImpl.setMvccVersion(userNotificationDelivery.getMvccVersion());
 		userNotificationDeliveryImpl.setUserNotificationDeliveryId(userNotificationDelivery.getUserNotificationDeliveryId());
 		userNotificationDeliveryImpl.setCompanyId(userNotificationDelivery.getCompanyId());
 		userNotificationDeliveryImpl.setUserId(userNotificationDelivery.getUserId());

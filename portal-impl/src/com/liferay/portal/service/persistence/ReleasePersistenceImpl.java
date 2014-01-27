@@ -603,7 +603,7 @@ public class ReleasePersistenceImpl extends BasePersistenceImpl<Release>
 		}
 
 		EntityCacheUtil.putResult(ReleaseModelImpl.ENTITY_CACHE_ENABLED,
-			ReleaseImpl.class, release.getPrimaryKey(), release);
+			ReleaseImpl.class, release.getPrimaryKey(), release, false);
 
 		clearUniqueFindersCache(release);
 		cacheUniqueFindersCache(release);
@@ -623,6 +623,7 @@ public class ReleasePersistenceImpl extends BasePersistenceImpl<Release>
 		releaseImpl.setNew(release.isNew());
 		releaseImpl.setPrimaryKey(release.getPrimaryKey());
 
+		releaseImpl.setMvccVersion(release.getMvccVersion());
 		releaseImpl.setReleaseId(release.getReleaseId());
 		releaseImpl.setCreateDate(release.getCreateDate());
 		releaseImpl.setModifiedDate(release.getModifiedDate());
