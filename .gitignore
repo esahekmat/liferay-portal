@@ -28,16 +28,16 @@ log
 /ActiveMQ
 /ant.install.log
 /api
-#/app.server.*.properties
+/app.server.*.properties
 /baseline-reports
 /bin
 /build.*.properties
 /dist
 /out
 /rebel.xml
-#/release.*.properties
+/release.*.properties
 /svn-revision
-#/test.*.properties
+/test.*.properties
 /WEB-INF
 
 /benchmarks/*.csv
@@ -89,8 +89,8 @@ log
 /portal-impl/test-results
 /portal-impl/woven-classes
 
-#/portal-impl/src/portal-ext.properties
-#/portal-impl/src/system-ext.properties
+/portal-impl/src/portal-ext.properties
+/portal-impl/src/system-ext.properties
 
 /portal-impl/src/META-INF/MANIFEST.MF.JOnAS
 /portal-impl/src/META-INF/portal-log4j-ext.xml
