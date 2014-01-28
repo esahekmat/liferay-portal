@@ -37,7 +37,7 @@
 			%>
 
 			<c:if test="<%= !group.isControlPanel() && (hasLayoutAddPermission || hasLayoutUpdatePermission || (layoutTypePortlet.isCustomizable() && layoutTypePortlet.isCustomizedView() && hasLayoutCustomizePermission)) %>">
-				<div class="add-content-menu" id="<portlet:namespace />addPanelContainer">
+				<div class="add-content-menu" id="<portlet:namespace />addPanelContainer" dir='<liferay-ui:message key="lang.dir"/>'>
 					<aui:button cssClass="close pull-right" name="closePanelAdd" value="&times;" />
 
 					<%
