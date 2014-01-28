@@ -1,0 +1,36 @@
+
+
+    jdbc.default.driverClassName=org.postgresql.Driver
+    jdbc.default.url=jdbc:postgresql://localhost:5432/lportal
+    jdbc.default.username=postgres
+    jdbc.default.password=postgres
+
+    database.indexes.update.on.startup=true
+
+    company.default.name=Behpardaz
+    company.default.web.id=behpardaz.net
+    company.default.home.url=/
+    company.default.locale=fa_IR
+    company.default.time.zone=Asia/Tehran
+    company.login.prepopulate.domain=false
+    company.security.send.password=false
+
+    users.reminder.queries.enabled=false
+    users.reminder.queries.custom.question.enabled=true
+
+    terms.of.use.required=false
+
+    locales.enabled=en_US,fa_IR
+     
+    open.id.auth.enabled=false
+    
+    image.default.company.logo=com/liferay/portal/dependencies/behpardaz_logo.png    
+    
+    index.search.spell.checker.dictionary[fa_IR]=com/liferay/portal/search/lucene/dependencies/spellchecker/fa_IR.txt 
+    index.search.spell.checker.supported.locales=en_US,es_ES,fa_IR
+    
+    admin.email.from.name=Esa Hekmat
+    admin.email.from.address=test@behpardaz.net
+    
+    announcements.email.from.name=Behpardaz Inc.    
+    announcements.email.from.address=noreply@behpardaz.net
