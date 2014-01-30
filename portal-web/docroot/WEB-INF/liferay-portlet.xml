@@ -25,7 +25,7 @@
 		<icon>/html/icons/search.png</icon>
 		<struts-path>search</struts-path>
 		<configuration-action-class>com.liferay.portlet.search.action.ConfigurationActionImpl</configuration-action-class>
-		<!--<open-search-class>com.liferay.portal.search.PortalOpenSearchImpl</open-search-class>-->
+		<!--<open-search-class>com.liferay.portal.search.PortalOpenSearchImpl</open-search-class> -->
 		<preferences-owned-by-group>true</preferences-owned-by-group>
 		<use-default-template>false</use-default-template>
 		<restore-current-view>false</restore-current-view>
@@ -196,7 +196,7 @@
 		<preferences-owned-by-group>true</preferences-owned-by-group>
 		<use-default-template>false</use-default-template>
 		<scopeable>true</scopeable>
-		<!--<user-principal-strategy>screenName</user-principal-strategy>-->
+		<!--<user-principal-strategy>screenName</user-principal-strategy> -->
 		<private-request-attributes>false</private-request-attributes>
 		<private-session-attributes>false</private-session-attributes>
 		<render-weight>50</render-weight>
@@ -652,16 +652,6 @@
 		<private-session-attributes>false</private-session-attributes>
 		<render-weight>0</render-weight>
 		<css-class-wrapper>portlet-amazon-rankings</css-class-wrapper>
-	</portlet>
-	<portlet>
-		<portlet-name>70</portlet-name>
-		<icon>/html/icons/default.png</icon>
-		<struts-path>password_generator</struts-path>
-		<remoteable>true</remoteable>
-		<private-request-attributes>false</private-request-attributes>
-		<private-session-attributes>false</private-session-attributes>
-		<render-weight>50</render-weight>
-		<css-class-wrapper>portlet-password-generator</css-class-wrapper>
 	</portlet>
 	<portlet>
 		<portlet-name>71</portlet-name>
