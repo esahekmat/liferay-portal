@@ -502,16 +502,6 @@
 		<css-class-wrapper>portlet-rss</css-class-wrapper>
 	</portlet>
 	<portlet>
-		<portlet-name>47</portlet-name>
-		<icon>/html/icons/default.png</icon>
-		<struts-path>hello_world</struts-path>
-		<remoteable>true</remoteable>
-		<private-request-attributes>false</private-request-attributes>
-		<private-session-attributes>false</private-session-attributes>
-		<render-weight>50</render-weight>
-		<css-class-wrapper>portlet-hello-world</css-class-wrapper>
-	</portlet>
-	<portlet>
 		<portlet-name>48</portlet-name>
 		<icon>/html/icons/default.png</icon>
 		<struts-path>iframe</struts-path>
@@ -538,16 +528,6 @@
 		<render-weight>50</render-weight>
 		<add-default-resource>true</add-default-resource>
 		<system>true</system>
-	</portlet>
-	<portlet>
-		<portlet-name>50</portlet-name>
-		<icon>/html/icons/default.png</icon>
-		<struts-path>hello_velocity</struts-path>
-		<remoteable>true</remoteable>
-		<private-request-attributes>false</private-request-attributes>
-		<private-session-attributes>false</private-session-attributes>
-		<render-weight>50</render-weight>
-		<css-class-wrapper>portlet-hello-velocity</css-class-wrapper>
 	</portlet>
 	<portlet>
 		<portlet-name>54</portlet-name>
