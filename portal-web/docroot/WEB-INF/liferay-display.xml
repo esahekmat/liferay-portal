@@ -100,10 +100,7 @@
 		<portlet id="84" />
 	</category>
 	<category name="category.sample">
-		<portlet id="47" />
 		<portlet id="48" />
-		<portlet id="50" />
-		<portlet id="66" />
 	</category>
 	<category name="category.shopping">
 		<portlet id="34" />
