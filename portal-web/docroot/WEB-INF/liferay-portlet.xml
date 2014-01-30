@@ -652,18 +652,6 @@
 		<css-class-wrapper>portlet-recent-documents</css-class-wrapper>
 	</portlet>
 	<portlet>
-		<portlet-name>66</portlet-name>
-		<icon>/html/icons/default.png</icon>
-		<struts-path>web_proxy</struts-path>
-		<configuration-action-class>com.liferay.portlet.webproxy.action.ConfigurationActionImpl</configuration-action-class>
-		<preferences-owned-by-group>true</preferences-owned-by-group>
-		<instanceable>true</instanceable>
-		<private-request-attributes>false</private-request-attributes>
-		<private-session-attributes>false</private-session-attributes>
-		<render-weight>50</render-weight>
-		<css-class-wrapper>portlet-web-proxy</css-class-wrapper>
-	</portlet>
-	<portlet>
 		<portlet-name>67</portlet-name>
 		<icon>/html/icons/default.png</icon>
 		<struts-path>amazon_rankings</struts-path>
@@ -1992,19 +1980,6 @@
 		<css-class-wrapper>portlet-site-browser</css-class-wrapper>
 		<add-default-resource>true</add-default-resource>
 		<system>true</system>
-	</portlet>
-	<portlet>
-		<portlet-name>186</portlet-name>
-		<icon>/html/icons/directory.png</icon>
-		<parent-struts-path>directory</parent-struts-path>
-		<portlet-url-class>com.liferay.portal.struts.StrutsActionPortletURL</portlet-url-class>
-		<preferences-owned-by-group>true</preferences-owned-by-group>
-		<use-default-template>false</use-default-template>
-		<private-request-attributes>false</private-request-attributes>
-		<private-session-attributes>false</private-session-attributes>
-		<render-weight>50</render-weight>
-		<header-portlet-css>/html/portlet/directory/css/main.css</header-portlet-css>
-		<css-class-wrapper>portlet-directory</css-class-wrapper>
 	</portlet>
 	<portlet>
 		<portlet-name>187</portlet-name>
