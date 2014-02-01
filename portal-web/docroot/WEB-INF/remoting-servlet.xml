@@ -781,18 +781,6 @@
 		<property name="service" ref="com.liferay.portlet.expando.service.ExpandoValueService" />
 		<property name="serviceInterface" value="com.liferay.portlet.expando.service.ExpandoValueService" />
 	</bean>
-	<bean name="/com_liferay_portlet_flags_service_spring_FlagsEntryService-burlap" class="org.springframework.remoting.caucho.BurlapServiceExporter">
-		<property name="service" ref="com.liferay.portlet.flags.service.FlagsEntryService" />
-		<property name="serviceInterface" value="com.liferay.portlet.flags.service.FlagsEntryService" />
-	</bean>
-	<bean name="/com_liferay_portlet_flags_service_spring_FlagsEntryService-hessian" class="org.springframework.remoting.caucho.HessianServiceExporter">
-		<property name="service" ref="com.liferay.portlet.flags.service.FlagsEntryService" />
-		<property name="serviceInterface" value="com.liferay.portlet.flags.service.FlagsEntryService" />
-	</bean>
-	<bean name="/com_liferay_portlet_flags_service_spring_FlagsEntryService-http" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
-		<property name="service" ref="com.liferay.portlet.flags.service.FlagsEntryService" />
-		<property name="serviceInterface" value="com.liferay.portlet.flags.service.FlagsEntryService" />
-	</bean>
 	<bean name="/com_liferay_portlet_journal_service_spring_JournalArticleService-burlap" class="org.springframework.remoting.caucho.BurlapServiceExporter">
 		<property name="service" ref="com.liferay.portlet.journal.service.JournalArticleService" />
 		<property name="serviceInterface" value="com.liferay.portlet.journal.service.JournalArticleService" />
@@ -997,6 +985,7 @@
 		<property name="service" ref="com.liferay.portlet.ratings.service.RatingsEntryService" />
 		<property name="serviceInterface" value="com.liferay.portlet.ratings.service.RatingsEntryService" />
 	</bean>
+	
 	<bean name="/com_liferay_portlet_shopping_service_spring_ShoppingCategoryService-burlap" class="org.springframework.remoting.caucho.BurlapServiceExporter">
 		<property name="service" ref="com.liferay.portlet.shopping.service.ShoppingCategoryService" />
 		<property name="serviceInterface" value="com.liferay.portlet.shopping.service.ShoppingCategoryService" />
