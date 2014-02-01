@@ -98,9 +98,6 @@
 	<category name="category.sample">
 		<portlet id="48" />
 	</category>
-	<category name="category.shopping">
-		<portlet id="67" />
-	</category>
 	<category name="category.social">
 		<portlet id="116" />
 		<portlet id="121" />
