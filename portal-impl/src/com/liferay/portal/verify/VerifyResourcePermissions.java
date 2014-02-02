@@ -50,8 +50,6 @@ import com.liferay.portlet.journal.model.JournalFeed;
 import com.liferay.portlet.messageboards.model.MBCategory;
 import com.liferay.portlet.messageboards.model.MBMessage;
 import com.liferay.portlet.polls.model.PollsQuestion;
-import com.liferay.portlet.shopping.model.ShoppingCategory;
-import com.liferay.portlet.shopping.model.ShoppingItem;
 import com.liferay.portlet.softwarecatalog.model.SCFrameworkVersion;
 import com.liferay.portlet.softwarecatalog.model.SCProductEntry;
 import com.liferay.portlet.wiki.model.WikiNode;
@@ -276,12 +274,6 @@ public class VerifyResourcePermissions extends VerifyProcess {
 		},
 		new String[] {
 			SCProductEntry.class.getName(), "SCProductEntry", "productEntryId"
-		},
-		new String[] {
-			ShoppingCategory.class.getName(), "ShoppingCategory", "categoryId"
-		},
-		new String[] {
-			ShoppingItem.class.getName(), "ShoppingItem", "itemId"
 		},
 		new String[] {
 			Team.class.getName(), "Team", "teamId"

@@ -132,13 +132,6 @@
 		<put name="portlet_content" value="/portlet/admin/view.jsp" />
 	</definition>
 
-	<!-- Amazon Rankings -->
-
-	<definition name="portlet.amazon_rankings" extends="portlet" />
-
-	<definition name="portlet.amazon_rankings.view" extends="portlet.amazon_rankings">
-		<put name="portlet_content" value="/portlet/amazon_rankings/view.jsp" />
-	</definition>
 
 	<!-- Announcements -->
 
@@ -194,34 +187,6 @@
 
 	<definition name="portlet.asset_category_admin.view_category" extends="portlet.asset_category_admin">
 		<put name="portlet_content" value="/portlet/asset_category_admin/view_category.jsp" />
-	</definition>
-
-	<!-- Asset Publisher -->
-
-	<definition name="portlet.asset_publisher" extends="portlet" />
-
-	<definition name="portlet.asset_publisher.add_asset_redirect" extends="portlet.asset_publisher">
-		<put name="portlet_content" value="/portlet/asset_publisher/add_asset_redirect.jsp" />
-	</definition>
-
-	<definition name="portlet.asset_publisher.edit_query_rule" extends="portlet.asset_publisher">
-		<put name="portlet_content" value="/portlet/asset_publisher/edit_query_rule.jsp" />
-	</definition>
-
-	<definition name="portlet.asset_publisher.error" extends="portlet.asset_publisher">
-		<put name="portlet_content" value="/portlet/asset_publisher/error.jsp" />
-	</definition>
-
-	<definition name="portlet.asset_publisher.select_structure_field" extends="portlet.asset_publisher">
-		<put name="portlet_content" value="/portlet/asset_publisher/select_structure_field.jsp" />
-	</definition>
-
-	<definition name="portlet.asset_publisher.view" extends="portlet.asset_publisher">
-		<put name="portlet_content" value="/portlet/asset_publisher/view.jsp" />
-	</definition>
-
-	<definition name="portlet.asset_publisher.view_content" extends="portlet.asset_publisher">
-		<put name="portlet_content" value="/portlet/asset_publisher/view_content.jsp" />
 	</definition>
 
 	<!-- Asset Tag Admin -->
@@ -376,18 +341,6 @@
 
 	<definition name="portlet.control_panel_menu.view" extends="portlet.control_panel_menu">
 		<put name="portlet_content" value="/portlet/control_panel_menu/view.jsp" />
-	</definition>
-
-	<!-- Currency Converter -->
-
-	<definition name="portlet.currency_converter" extends="portlet" />
-
-	<definition name="portlet.currency_converter.edit" extends="portlet.currency_converter">
-		<put name="portlet_content" value="/portlet/currency_converter/edit.jsp" />
-	</definition>
-
-	<definition name="portlet.currency_converter.view" extends="portlet.currency_converter">
-		<put name="portlet_content" value="/portlet/currency_converter/view.jsp" />
 	</definition>
 
 	<!-- Directory -->
@@ -648,9 +601,6 @@
 		<put name="portlet_content" value="/portlet/expando/view_attributes.jsp" />
 	</definition>
 
-	<!-- Flags -->
-
-	<definition name="portlet.flags.edit_entry" path="/portlet/flags/edit_entry.jsp" />
 
 	<!-- Group Statistics -->
 
@@ -1070,14 +1020,6 @@
 		<put name="portlet_content" value="/portlet/nested_portlets/view.jsp" />
 	</definition>
 
-	<!-- Network -->
-
-	<definition name="portlet.network" extends="portlet" />
-
-	<definition name="portlet.network.view" extends="portlet.network">
-		<put name="portlet_content" value="/portlet/network/view.jsp" />
-	</definition>
-
 	<!-- News -->
 
 	<definition name="portlet.news" extends="portlet" />
@@ -1096,34 +1038,6 @@
 
 	<definition name="portlet.our_activities.view" extends="portlet.our_activities">
 		<put name="portlet_content" value="/portlet/our_activities/view.jsp" />
-	</definition>
-
-	<!-- Page Comments -->
-
-	<definition name="portlet.page_comments" extends="portlet" />
-
-	<definition name="portlet.page_comments.error" extends="portlet.page_comments">
-		<put name="portlet_content" value="/portlet/page_comments/error.jsp" />
-	</definition>
-
-	<definition name="portlet.page_comments.view" extends="portlet.page_comments">
-		<put name="portlet_content" value="/portlet/page_comments/view.jsp" />
-	</definition>
-
-	<!-- Page Flags -->
-
-	<definition name="portlet.page_flags" extends="portlet" />
-
-	<definition name="portlet.page_flags.view" extends="portlet.page_flags">
-		<put name="portlet_content" value="/portlet/page_flags/view.jsp" />
-	</definition>
-
-	<!-- Page Ratings -->
-
-	<definition name="portlet.page_ratings" extends="portlet" />
-
-	<definition name="portlet.page_ratings.view" extends="portlet.page_ratings">
-		<put name="portlet_content" value="/portlet/page_ratings/view.jsp" />
 	</definition>
 
 	<!-- Password Policies Admin -->
@@ -1294,15 +1208,6 @@
 		<put name="portlet_content" value="/portlet/portlet_sharing/view.jsp" />
 	</definition>
 
-	<!-- Quick Note -->
-
-	<definition name="portlet.quick_note" extends="portlet" />
-
-	<definition name="portlet.quick_note.view" extends="portlet.quick_note">
-		<put name="portlet_content" value="/portlet/quick_note/view.jsp" />
-		<put name="portlet_decorate" value="false" />
-	</definition>
-
 	<!-- Recent Documents -->
 
 	<definition name="portlet.recent_documents" extends="portlet" />
@@ -1385,74 +1290,6 @@
 
 	<definition name="portlet.search.view" extends="portlet.search">
 		<put name="portlet_content" value="/portlet/search/view.jsp" />
-	</definition>
-
-	<!-- Shopping -->
-
-	<definition name="portlet.shopping" extends="portlet" />
-
-	<definition name="portlet.shopping.add_book_items" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/add_book_items.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.cart" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/cart.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.checkout_first" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/checkout_first.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.checkout_second" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/checkout_second.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.checkout_third" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/checkout_third.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.edit_category" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/edit_category.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.edit_coupon" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/edit_coupon.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.edit_item" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/edit_item.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.edit_item_quantities" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/edit_item_quantities.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.edit_order" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/edit_order.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.error" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/error.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.search" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/search.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.select_category" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/select_category.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.view" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/view.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.view_coupon" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/view_coupon.jsp" />
-	</definition>
-
-	<definition name="portlet.shopping.view_item" extends="portlet.shopping">
-		<put name="portlet_content" value="/portlet/shopping/view_item.jsp" />
 	</definition>
 
 	<!-- Site Browser -->

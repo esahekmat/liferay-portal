@@ -206,10 +206,6 @@
 			<forward name="portlet.announcements.view" path="portlet.announcements.view" />
 		</action>
 
-		<!-- Amazon Rankings -->
-
-		<action path="/amazon_rankings/view" forward="portlet.amazon_rankings.view" />
-
 		<!-- Announcements -->
 
 		<action path="/announcements/edit_entry" type="com.liferay.portlet.announcements.action.EditEntryAction">
@@ -249,45 +245,6 @@
 
 		<action path="/asset_category_admin/view_category" forward="portlet.asset_category_admin.view_category" />
 
-		<!-- Asset Publisher -->
-
-		<action path="/asset_publisher/add_asset_redirect" forward="portlet.asset_publisher.add_asset_redirect" />
-
-		<action path="/asset_publisher/edit_article_discussion" type="com.liferay.portlet.messageboards.action.EditDiscussionAction">
-			<forward name="portlet.message_boards.error" path="portlet.journal_content.error" />
-		</action>
-
-		<action path="/asset_publisher/edit_entry_discussion" type="com.liferay.portlet.messageboards.action.EditDiscussionAction">
-			<forward name="portlet.message_boards.error" path="portlet.blogs.error" />
-		</action>
-
-		<action path="/asset_publisher/edit_file_entry_discussion" type="com.liferay.portlet.messageboards.action.EditDiscussionAction">
-			<forward name="portlet.message_boards.error" path="portlet.document_library.error" />
-		</action>
-
-		<action path="/asset_publisher/edit_page_discussion" type="com.liferay.portlet.messageboards.action.EditDiscussionAction">
-			<forward name="portlet.message_boards.error" path="portlet.page_comments.error" />
-		</action>
-
-		<action path="/asset_publisher/edit_query_rule" forward="portlet.asset_publisher.edit_query_rule" />
-
-		<action path="/asset_publisher/edit_subscription" type="com.liferay.portlet.assetpublisher.action.EditSubscriptionAction" />
-
-		<action path="/asset_publisher/export_journal_article" type="com.liferay.portlet.journalcontent.action.ExportArticleAction" />
-
-		<action path="/asset_publisher/export_wiki_page" type="com.liferay.portlet.wiki.action.ExportPageAction" />
-
-		<action path="/asset_publisher/get_file" type="com.liferay.portlet.documentlibrary.action.GetFileAction" />
-
-		<action path="/asset_publisher/rss" type="com.liferay.portlet.assetpublisher.action.RSSAction" />
-
-		<action path="/asset_publisher/select_structure_field" forward="portlet.asset_publisher.select_structure_field" />
-
-		<action path="/asset_publisher/view" type="com.liferay.portlet.assetpublisher.action.ViewAction">
-			<forward name="portlet.asset_publisher.view" path="portlet.asset_publisher.view" />
-		</action>
-
-		<action path="/asset_publisher/view_content" forward="portlet.asset_publisher.view_content" />
 
 		<!-- Asset Tag Admin -->
 
@@ -419,14 +376,6 @@
 		<!-- Control Panel Menu -->
 
 		<action path="/control_panel_menu/view" forward="portlet.control_panel_menu.view" />
-
-		<!-- Currency Converter -->
-
-		<action path="/currency_converter/edit" type="com.liferay.portlet.currencyconverter.action.EditPreferencesAction">
-			<forward name="portlet.currency_converter.edit" path="portlet.currency_converter.edit" />
-		</action>
-
-		<action path="/currency_converter/view" forward="portlet.currency_converter.view" />
 
 		<!-- Directory -->
 
@@ -1402,13 +1351,6 @@
 			<forward name="portlet.my_pages.view" path="portlet.my_account.view" />
 		</action>
 
-		<!-- My Sites -->
-
-		<action path="/my_sites/edit_layouts" type="com.liferay.portlet.myplaces.action.EditPagesAction" />
-
-		<action path="/my_sites/view" type="com.liferay.portlet.myplaces.action.ViewAction">
-			<forward name="portlet.my_sites.view" path="portlet.my_sites.view" />
-		</action>
 
 		<!-- My Workflow Instances -->
 
@@ -1456,10 +1398,6 @@
 			<forward name="portlet.nested_portlets.view" path="portlet.nested_portlets.view" />
 		</action>
 
-		<!-- Network -->
-
-		<action path="/network/view" forward="portlet.network.view" />
-
 		<!-- News -->
 
 		<action path="/news/edit" type="com.liferay.portlet.news.action.EditPreferencesAction">
@@ -1471,23 +1409,7 @@
 		<!-- Our Activities -->
 
 		<action path="/our_activities/view" forward="portlet.our_activities.view" />
-
-		<!-- Page Comments -->
-
-		<action path="/page_comments/edit_page_discussion" type="com.liferay.portlet.messageboards.action.EditDiscussionAction">
-			<forward name="portlet.message_boards.error" path="portlet.page_comments.error" />
-		</action>
-
-		<action path="/page_comments/view" forward="portlet.page_comments.view" />
-
-		<!-- Page Flags -->
-
-		<action path="/page_flags/view" forward="portlet.page_flags.view" />
-
-		<!-- Page Ratings -->
-
-		<action path="/page_ratings/view" forward="portlet.page_ratings.view" />
-
+		
 		<!-- Password Policies Admin -->
 
 		<action path="/password_policies_admin/edit_password_policy" type="com.liferay.portlet.passwordpoliciesadmin.action.EditPasswordPolicyAction">
@@ -1638,12 +1560,6 @@
 			<forward name="portlet.portlet_sharing.view" path="portlet.portlet_sharing.view" />
 		</action>
 
-		<!-- Quick Note -->
-
-		<action path="/quick_note/save" type="com.liferay.portlet.quicknote.action.SaveAction" />
-
-		<action path="/quick_note/view" forward="portlet.quick_note.view" />
-
 		<!-- Recent Documents -->
 
 		<action path="/recent_documents/get_file" type="com.liferay.portlet.documentlibrary.action.GetFileAction" />
@@ -1717,75 +1633,7 @@
 
 		<action path="/search/view" forward="portlet.search.view" />
 
-		<!-- Shopping -->
-
-		<action path="/shopping/add_book_items" type="com.liferay.portlet.shopping.action.AddBookItemsAction">
-			<forward name="portlet.shopping.add_book_items" path="portlet.shopping.add_book_items" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/cart" type="com.liferay.portlet.shopping.action.CartAction">
-			<forward name="portlet.shopping.cart" path="portlet.shopping.cart" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/checkout" type="com.liferay.portlet.shopping.action.CheckoutAction">
-			<forward name="portlet.shopping.checkout_first" path="portlet.shopping.checkout_first" />
-			<forward name="portlet.shopping.checkout_second" path="portlet.shopping.checkout_second" />
-			<forward name="portlet.shopping.checkout_third" path="portlet.shopping.checkout_third" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/edit_category" type="com.liferay.portlet.shopping.action.EditCategoryAction">
-			<forward name="portlet.shopping.edit_category" path="portlet.shopping.edit_category" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/edit_coupon" type="com.liferay.portlet.shopping.action.EditCouponAction">
-			<forward name="portlet.shopping.edit_coupon" path="portlet.shopping.edit_coupon" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/edit_item" type="com.liferay.portlet.shopping.action.EditItemAction">
-			<forward name="portlet.shopping.edit_item" path="portlet.shopping.edit_item" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/edit_item_quantities" forward="portlet.shopping.edit_item_quantities" />
-
-		<action path="/shopping/edit_order" type="com.liferay.portlet.shopping.action.EditOrderAction">
-			<forward name="portlet.shopping.edit_order" path="portlet.shopping.edit_order" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/edit_order_discussion" type="com.liferay.portlet.messageboards.action.EditDiscussionAction">
-			<forward name="portlet.message_boards.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/notify" type="com.liferay.portlet.shopping.action.PayPalNotificationAction" />
-
-		<action path="/shopping/search" forward="portlet.shopping.search" />
-
-		<action path="/shopping/select_category" type="com.liferay.portlet.shopping.action.EditCategoryAction">
-			<forward name="portlet.shopping.edit_category" path="portlet.shopping.select_category" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
-		<action path="/shopping/view" type="com.liferay.portlet.shopping.action.ViewAction">
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-			<forward name="portlet.shopping.view" path="portlet.shopping.view" />
-		</action>
-
-		<action path="/shopping/view_coupon" type="com.liferay.portlet.shopping.action.ViewCouponAction">
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-			<forward name="portlet.shopping.view_coupon" path="portlet.shopping.view_coupon" />
-		</action>
-
-		<action path="/shopping/view_item" type="com.liferay.portlet.shopping.action.EditItemAction">
-			<forward name="portlet.shopping.edit_item" path="portlet.shopping.view_item" />
-			<forward name="portlet.shopping.error" path="portlet.shopping.error" />
-		</action>
-
+	
 		<!-- Site Browser -->
 
 		<action path="/site_browser/view" forward="portlet.site_browser.view" />
