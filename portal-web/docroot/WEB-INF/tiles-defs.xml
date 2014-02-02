@@ -585,15 +585,6 @@
 		<put name="portlet_content" value="/portlet/expando/view_attributes.jsp" />
 	</definition>
 
-
-	<!-- Group Statistics -->
-
-	<definition name="portlet.group_statistics" extends="portlet" />
-
-	<definition name="portlet.group_statistics.add_activity_counter" extends="portlet.group_statistics">
-		<put name="portlet_content" value="/portlet/group_statistics/add_activity_counter.jsp" />
-	</definition>
-
 	<!-- IFrame -->
 
 	<definition name="portlet.iframe" extends="portlet" />
