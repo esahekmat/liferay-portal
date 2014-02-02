@@ -2294,50 +2294,6 @@
 		</security-role-ref>
 	</portlet>
 	<portlet>
-		<portlet-name>175</portlet-name>
-		<display-name>Related Assets</display-name>
-		<portlet-class>com.liferay.portlet.StrutsPortlet</portlet-class>
-		<init-param>
-			<name>config-template</name>
-			<value>/html/portlet/asset_publisher/configuration.jsp</value>
-		</init-param>
-		<init-param>
-			<name>template-path</name>
-			<value>/html/portlet/asset_publisher/</value>
-		</init-param>
-		<init-param>
-			<name>view-action</name>
-			<value>/asset_publisher/view</value>
-		</init-param>
-		<expiration-cache>0</expiration-cache>
-		<supports>
-			<mime-type>text/html</mime-type>
-		</supports>
-		<resource-bundle>com.liferay.portlet.StrutsResourceBundle</resource-bundle>
-		<portlet-preferences>
-			<preference>
-				<name>assetLinkBehavior</name>
-				<value>viewInPortlet</value>
-			</preference>
-			<preference>
-				<name>displayStyle</name>
-				<value>title-list</value>
-			</preference>
-		</portlet-preferences>
-		<security-role-ref>
-			<role-name>guest</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>power-user</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>user</role-name>
-		</security-role-ref>
-		<supported-public-render-parameter>categoryId</supported-public-render-parameter>
-		<supported-public-render-parameter>resetCur</supported-public-render-parameter>
-		<supported-public-render-parameter>tag</supported-public-render-parameter>
-	</portlet>
-	<portlet>
 		<portlet-name>176</portlet-name>
 		<display-name>License Manager</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
