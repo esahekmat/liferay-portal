@@ -25,7 +25,6 @@ import com.liferay.portalweb.portal.util.TestPropsValues;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Map;
 
 import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
@@ -48,6 +47,18 @@ public abstract class BaseWebDriverImpl
 
 		_projectDir = projectDir;
 
+		if (OSDetector.isWindows()) {
+			_dependenciesDir = StringUtil.replace(_dependenciesDir, "//", "\\");
+
+			_outputDir = StringUtil.replace(_outputDir, "//", "\\");
+
+			_projectDir = StringUtil.replace(_projectDir, "//", "\\");
+
+			_sikuliImagesDir = StringUtil.replace(_sikuliImagesDir, "//", "\\");
+			_sikuliImagesDir = StringUtil.replace(
+				_sikuliImagesDir, "linux", "windows");
+		}
+
 		WebDriver.Options options = webDriver.manage();
 
 		WebDriver.Window window = options.window();
@@ -55,6 +66,11 @@ public abstract class BaseWebDriverImpl
 		window.setSize(new Dimension(1050, 1250));
 
 		webDriver.get(browserURL);
+	}
+
+	@Override
+	public void antCommand(String fileName, String target) throws Exception {
+		LiferaySeleniumHelper.antCommand(this, fileName, target);
 	}
 
 	@Override
@@ -100,7 +116,18 @@ public abstract class BaseWebDriverImpl
 			return;
 		}
 
-		String pageSource = getPageSource();
+		String pageSource = null;
+
+		try {
+			pageSource = getPageSource();
+		}
+		catch (Exception e) {
+			WebDriver.TargetLocator targetLocator = switchTo();
+
+			targetLocator.window(defaultWindowHandle);
+
+			pageSource = getPageSource();
+		}
 
 		if (pageSource.contains(
 				"html id=\"feedHandler\" xmlns=" +
@@ -258,6 +285,11 @@ public abstract class BaseWebDriverImpl
 	}
 
 	@Override
+	public void clickImageElement(String image) throws Exception {
+		LiferaySeleniumHelper.clickImageElement(this, image);
+	}
+
+	@Override
 	public void connectToEmailAccount(String emailAddress, String emailPassword)
 		throws Exception {
 
@@ -372,6 +404,11 @@ public abstract class BaseWebDriverImpl
 	}
 
 	@Override
+	public String getOutputDir() {
+		return _outputDir;
+	}
+
+	@Override
 	public String getPrimaryTestSuiteName() {
 		return _primaryTestSuiteName;
 	}
@@ -379,6 +416,11 @@ public abstract class BaseWebDriverImpl
 	@Override
 	public String getProjectDir() {
 		return _projectDir;
+	}
+
+	@Override
+	public String getSikuliImagesDir() {
+		return _sikuliImagesDir;
 	}
 
 	@Override
@@ -577,8 +619,11 @@ public abstract class BaseWebDriverImpl
 	}
 
 	@Override
-	public void sendLogger(
-		String id, String status, Map<String, String> context) {
+	public void sendTestCaseCommandLogger(String command) {
+	}
+
+	@Override
+	public void sendTestCaseHeaderLogger(String command) {
 	}
 
 	@Override
@@ -604,16 +649,13 @@ public abstract class BaseWebDriverImpl
 	}
 
 	@Override
+	public void typeImageElement(String image, String value) throws Exception {
+		LiferaySeleniumHelper.typeImageElement(this, image, value);
+	}
+
+	@Override
 	public void uploadCommonFile(String location, String value) {
-		String dependenciesDir =
-			"portal-web//test//functional//com//liferay//portalweb//" +
-				"dependencies//";
-
-		if (OSDetector.isWindows()) {
-			dependenciesDir = StringUtil.replace(dependenciesDir, "//", "\\");
-		}
-
-		uploadFile(location, _projectDir + dependenciesDir + value);
+		uploadFile(location, _projectDir + _dependenciesDir + value);
 	}
 
 	@Override
@@ -744,7 +786,11 @@ public abstract class BaseWebDriverImpl
 	}
 
 	private String _clipBoard = "";
+	private String _dependenciesDir =
+		"portal-web//test//functional//com//liferay//portalweb//dependencies//";
+	private String _outputDir = TestPropsValues.OUTPUT_DIR;
 	private String _primaryTestSuiteName;
 	private String _projectDir;
+	private String _sikuliImagesDir = _dependenciesDir + "sikuli//linux//";
 
 }

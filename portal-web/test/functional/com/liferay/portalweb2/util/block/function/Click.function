@@ -30,6 +30,12 @@
 	</command>
 
 	<command name="clickAtNavigation">
+		<execute function="Click#clickAtNonLiferayNavigation" />
+
+		<execute selenium="waitForElementPresent" argument1="//script[contains(@src,'/html/js/aui/aui-url/aui-url-min.js')]" />
+	</command>
+
+	<command name="clickAtNonLiferayNavigation">
 		<execute selenium="pause" argument1="1000" />
 
 		<if>
@@ -48,8 +54,6 @@
 		<execute function="Click#clickAt" />
 
 		<execute selenium="pause" argument1="1000" />
-
-		<execute selenium="waitForElementPresent" argument1="//script[contains(@src,'/html/js/aui/aui-url/aui-url-min.js')]" />
 	</command>
 
 	<command name="clickAtSidebarClickAt">
@@ -60,6 +64,12 @@
 		<execute selenium="waitForElementPresent" argument1="//script[contains(@src,'/html/js/liferay/node.js')]" />
 
 		<execute function="Click#clickAt" />
+	</command>
+
+	<command name="clickImageElement">
+		<execute selenium="clickImageElement" />
+
+		<execute selenium="pause" argument1="2000" />
 	</command>
 
 	<command name="clickWaitForInlineCKEditor">
