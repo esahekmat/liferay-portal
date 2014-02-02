@@ -1377,7 +1377,9 @@ public class SeleniumBuilderFileUtil {
 			text = text.substring(0, text.length() - 1);
 		}
 
-		if (!text.equals("") && !text.startsWith("link=")) {
+		if (!text.equals("") && !text.startsWith("link=") &&
+			!text.contains(".png")) {
+
 			try {
 				XPathFactory xPathFactory = XPathFactory.newInstance();
 
@@ -1699,12 +1701,6 @@ public class SeleniumBuilderFileUtil {
 							1013, fileName, element, method);
 					}
 				}
-				else {
-					if (statement.matches(".*[\\?\\(\\)\\}\\{].*")) {
-						throwValidationException(
-							1006, fileName, element, "value");
-					}
-				}
 			}
 		}
 
@@ -1753,8 +1749,8 @@ public class SeleniumBuilderFileUtil {
 		});
 	private static List<String> _methodNames = ListUtil.fromArray(
 		new String[] {
-			"getFirstNumber", "increment", "length", "lowercase", "replace",
-			"uppercase"
+			"getFirstNumber", "getIPAddress", "increment", "length",
+			"lowercase", "replace", "uppercase"
 		});
 	private static List<String> _reservedTags = ListUtil.fromArray(
 		new String[] {

@@ -418,6 +418,7 @@
 			fork="true"
 			newenvironment="true"
 		>
+			<jvmarg value="-Xmx1024m" />
 			<jvmarg value="-Dliferay.lib.portal.dir=${basedir}/../lib/portal" />
 			<arg value="sass.dir.0=/html/css" />
 			<arg value="sass.dir.1=/html/portlet" />

@@ -907,8 +907,7 @@ public class JournalArticleLocalServiceImpl
 	 */
 	@Indexable(type = IndexableType.DELETE)
 	@Override
-	@SystemEvent(
-		action = SystemEventConstants.ACTION_SKIP, send = false)
+	@SystemEvent(action = SystemEventConstants.ACTION_SKIP, send = false)
 	public JournalArticle deleteArticle(
 			JournalArticle article, String articleURL,
 			ServiceContext serviceContext)
@@ -6364,7 +6363,9 @@ public class JournalArticleLocalServiceImpl
 			JournalArticle article, ServiceContext serviceContext)
 		throws PortalException, SystemException {
 
-		if (!article.isApproved()) {
+		String layoutFullURL = serviceContext.getLayoutFullURL();
+
+		if (!article.isApproved() || Validator.isNull(layoutFullURL)) {
 			return;
 		}
 
