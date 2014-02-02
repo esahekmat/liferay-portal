@@ -161,14 +161,6 @@
 		<put name="portlet_content" value="/portlet/asset_browser/view.jsp" />
 	</definition>
 
-	<!-- Asset Categories Navigation -->
-
-	<definition name="portlet.asset_categories_navigation" extends="portlet" />
-
-	<definition name="portlet.asset_categories_navigation.view" extends="portlet.asset_categories_navigation">
-		<put name="portlet_content" value="/portlet/asset_categories_navigation/view.jsp" />
-	</definition>
-
 	<!-- Asset Category Admin -->
 
 	<definition name="portlet.asset_category_admin" extends="portlet" />
@@ -204,15 +196,7 @@
 	<definition name="portlet.asset_tag_admin.view_tag" extends="portlet.asset_tag_admin">
 		<put name="portlet_content" value="/portlet/asset_tag_admin/view_tag.jsp" />
 	</definition>
-
-	<!-- Asset Tags Navigation -->
-
-	<definition name="portlet.asset_tags_navigation" extends="portlet" />
-
-	<definition name="portlet.asset_tags_navigation.view" extends="portlet.asset_tags_navigation">
-		<put name="portlet_content" value="/portlet/asset_tags_navigation/view.jsp" />
-	</definition>
-
+	
 	<!-- Background Task-->
 
 	<definition name="portlet.background_task" extends="portlet" />
@@ -1208,14 +1192,6 @@
 		<put name="portlet_content" value="/portlet/portlet_sharing/view.jsp" />
 	</definition>
 
-	<!-- Recent Documents -->
-
-	<definition name="portlet.recent_documents" extends="portlet" />
-
-	<definition name="portlet.recent_documents.view" extends="portlet.recent_documents">
-		<put name="portlet_content" value="/portlet/recent_documents/view.jsp" />
-	</definition>
-
 	<!-- Requests -->
 
 	<definition name="portlet.requests" extends="portlet" />
@@ -1700,11 +1676,4 @@
 		<put name="portlet_content" value="/portlet/workflow_tasks/view.jsp" />
 	</definition>
 
-	<!-- XSL Content -->
-
-	<definition name="portlet.xsl_content" extends="portlet" />
-
-	<definition name="portlet.xsl_content.view" extends="portlet.xsl_content">
-		<put name="portlet_content" value="/portlet/xsl_content/view.jsp" />
-	</definition>
 </tiles-definitions>

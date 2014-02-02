@@ -227,10 +227,6 @@
 
 		<action path="/asset_browser/view" forward="portlet.asset_browser.view" />
 
-		<!-- Asset Categories Navigation -->
-
-		<action path="/asset_categories_navigation/view" forward="portlet.asset_categories_navigation.view" />
-
 		<!-- Asset Category Admin -->
 
 		<action path="/asset_category_admin/edit_category" type="com.liferay.portlet.assetcategoryadmin.action.EditCategoryAction">
@@ -259,10 +255,6 @@
 		<!-- Asset Tags Cloud -->
 
 		<action path="/asset_tags_cloud/view" forward="portlet.asset_tags_navigation.view" />
-
-		<!-- Asset Tags Navigation -->
-
-		<action path="/asset_tags_navigation/view" forward="portlet.asset_tags_navigation.view" />
 
 		<!-- Blogs -->
 
@@ -1560,12 +1552,6 @@
 			<forward name="portlet.portlet_sharing.view" path="portlet.portlet_sharing.view" />
 		</action>
 
-		<!-- Recent Documents -->
-
-		<action path="/recent_documents/get_file" type="com.liferay.portlet.documentlibrary.action.GetFileAction" />
-
-		<action path="/recent_documents/view" forward="portlet.recent_documents.view" />
-
 		<!-- Requests -->
 
 		<action path="/requests/update_request" type="com.liferay.portlet.requests.action.UpdateRequestAction">
@@ -2437,11 +2423,6 @@
 
 		<action path="/workflow_tasks/view_content" forward="portlet.asset_publisher.view_content" />
 
-		<!-- XSL Content -->
-
-		<action path="/xsl_content/view" type="com.liferay.portlet.xslcontent.action.ViewAction">
-			<forward name="portlet.xsl_content.view" path="portlet.xsl_content.view" />
-		</action>
 	</action-mappings>
 
 	<!-- Custom Request Processor -->
