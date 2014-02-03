@@ -1552,16 +1552,6 @@
 			<forward name="portlet.portlet_sharing.view" path="portlet.portlet_sharing.view" />
 		</action>
 
-		<!-- Requests -->
-
-		<action path="/requests/update_request" type="com.liferay.portlet.requests.action.UpdateRequestAction">
-			<forward name="portlet.requests.error" path="portlet.requests.error" />
-		</action>
-
-		<action path="/requests/view" type="com.liferay.portlet.requests.action.ViewAction">
-			<forward name="portlet.requests.view" path="portlet.requests.view" />
-		</action>
-
 		<!-- Roles Admin -->
 
 		<action path="/roles_admin/edit_layouts" type="com.liferay.portlet.layoutsadmin.action.EditLayoutsAction">
