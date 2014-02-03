@@ -1451,14 +1451,6 @@
 		<put name="portlet_content" value="/portlet/user_groups_admin/view.jsp" />
 	</definition>
 
-	<!-- User Statistics -->
-
-	<definition name="portlet.user_statistics" extends="portlet" />
-
-	<definition name="portlet.user_statistics.add_activity_counter" extends="portlet.user_statistics">
-		<put name="portlet_content" value="/portlet/user_statistics/add_activity_counter.jsp" />
-	</definition>
-
 	<!-- Users Admin -->
 
 	<definition name="portlet.users_admin" extends="portlet" />
