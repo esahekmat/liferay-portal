@@ -39,17 +39,23 @@ public class FastDateFormatFactoryImpl implements FastDateFormatFactory {
 
 	@Override
 	public Format getDate(int style, Locale locale, TimeZone timeZone) {
-		String key = getKey(style, locale, timeZone);
+		if (locale.getLanguage().equals(new Locale("fa").getLanguage())) {
+			return PersianDateFormat.getDateInstance(style, timeZone, locale);
+		} else {
+			String key = getKey(style, locale, timeZone);
 
-		Format format = _dateFormats.get(key);
+			Format format = _dateFormats.get(key);
 
-		if (format == null) {
-			format = FastDateFormat.getDateInstance(style, timeZone, locale);
+			if (format == null) {
+				format = FastDateFormat
+						.getDateInstance(style, timeZone, locale);
 
-			_dateFormats.put(key, format);
+				_dateFormats.put(key, format);
+			}
+
+			return format;
 		}
 
-		return format;
 	}
 
 	@Override
