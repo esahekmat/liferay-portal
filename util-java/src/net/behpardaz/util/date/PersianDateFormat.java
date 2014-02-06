@@ -30,18 +30,22 @@ public class PersianDateFormat extends Format {
 	private static final long serialVersionUID = -8799645183289628253L;
 	private static PersianDateFormat _fomatter;
 	private FastDateFormat _gregorian_formatter;
+	private FastDateFormat _time_formatter;
 
-	protected boolean showTime;
+	protected final boolean showTime;
 
 	protected PersianDateFormat(int dateStyle, int timeStyle,
 			TimeZone timeZone, Locale locale, boolean showTime) {
 		if (showTime) {
 			_gregorian_formatter = FastDateFormat.getDateTimeInstance(
 					FastDateFormat.LONG, timeStyle, timeZone, locale);
+			_time_formatter = FastDateFormat.getTimeInstance(timeStyle,
+					timeZone, locale);
 		} else {
 			_gregorian_formatter = FastDateFormat.getDateInstance(
 					FastDateFormat.LONG, timeZone, locale);
 		}
+		this.showTime = showTime;
 	}
 
 	public String format(Date date) {
@@ -59,8 +63,11 @@ public class PersianDateFormat extends Format {
 			return jalali.getYear() + StringPool.SLASH
 					+ (jalali.getMonth() + 1) + StringPool.SLASH
 					+ jalali.getDate() + StringPool.SPACE
-					+ cal.get(Calendar.HOUR_OF_DAY) + StringPool.COLON
-					+ cal.get(Calendar.MINUTE);
+					+ _time_formatter.format(cal);
+			/*
+			 * + cal.get(Calendar.HOUR_OF_DAY) + StringPool.COLON +
+			 * cal.get(Calendar.MINUTE);
+			 */
 		}
 		return jalali.getYear() + StringPool.SLASH + (jalali.getMonth() + 1)
 				+ StringPool.SLASH + jalali.getDate();
