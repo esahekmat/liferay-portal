@@ -1556,6 +1556,24 @@
 		<system>true</system>
 	</portlet>
 	<portlet>
+		<portlet-name>175</portlet-name>
+		<icon>/html/icons/asset_publisher.png</icon>
+		<parent-struts-path>asset_publisher</parent-struts-path>
+		<configuration-action-class>com.liferay.portlet.assetpublisher.action.ConfigurationActionImpl</configuration-action-class>
+		<portlet-url-class>com.liferay.portal.struts.StrutsActionPortletURL</portlet-url-class>
+		<portlet-data-handler-class>com.liferay.portlet.assetpublisher.lar.AssetPublisherPortletDataHandler</portlet-data-handler-class>
+		<preferences-owned-by-group>true</preferences-owned-by-group>
+		<use-default-template>false</use-default-template>
+		<instanceable>true</instanceable>
+		<private-request-attributes>false</private-request-attributes>
+		<private-session-attributes>false</private-session-attributes>
+		<render-weight>1</render-weight>
+		<ajaxable>false</ajaxable>
+		<header-portlet-css>/html/portlet/asset_publisher/css/main.css</header-portlet-css>
+		<css-class-wrapper>portlet-asset-publisher</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+	<portlet>
 		<portlet-name>176</portlet-name>
 		<icon>/html/icons/default.png</icon>
 		<struts-path>license_manager</struts-path>
