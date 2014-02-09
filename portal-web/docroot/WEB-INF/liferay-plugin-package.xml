@@ -10,13 +10,13 @@
 		<type>theme</type>
 	</types>
 	<short-description>
-		Portlets, themes, and layout templates included with Liferay Portal.
+		تم، پورتلت‌های و شیوه‌های نمایش پیشفرض که در هسته خود پورتال تعبیه شده‌اند
 	</short-description>
 	<change-log>
 		Adapted to the latest version of Liferay.
 	</change-log>
-	<page-url>http://www.liferay.com/web/guest/downloads</page-url>
-	<author>Liferay, Inc.</author>
+	<page-url>http://www.behpardaz.net</page-url>
+	<author>شرکت بهپرداز جهان</author>
 	<licenses>
 		<license osi-approved="true">LGPL</license>
 	</licenses>
