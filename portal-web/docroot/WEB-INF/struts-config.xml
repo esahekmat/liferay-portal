@@ -1383,6 +1383,13 @@
 			<forward name="portlet.my_pages.view" path="portlet.my_account.view" />
 		</action>
 
+		<!-- My Sites -->
+
+		<action path="/my_sites/edit_layouts" type="com.liferay.portlet.myplaces.action.EditPagesAction" />
+
+		<action path="/my_sites/view" type="com.liferay.portlet.myplaces.action.ViewAction">
+			<forward name="portlet.my_sites.view" path="portlet.my_sites.view" />
+		</action>
 
 		<!-- My Workflow Instances -->
 
